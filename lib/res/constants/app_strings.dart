@@ -19,5 +19,5 @@ class AppStrings {
   static const String appBarText = "Login to continue";
   static const String account = "Account";
   static const String profile = "Profile";
-  static const String finish = "finish";
+  static const String finish = "Finish";
 }
