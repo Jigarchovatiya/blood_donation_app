@@ -20,4 +20,19 @@ class AppStrings {
   static const String account = "Account";
   static const String profile = "Profile";
   static const String finish = "Finish";
+  static const String textOne = "We’ll send one-time password to\nyour mobile number.";
+  static const String continuing = "By continuing you agree to our ";
+  static const String terms = "“Terms &\nConditions”";
+  static const String readOur = ". Read Our";
+  static const String privacyPolicy = " Privacy Policy.";
+  static const String orLogInWith = "or login with";
+
+  /// log in screen
+  static const String appBarTitle = "Create Account";
+  static const String login = "Login";
+  static const String enterOtp = "Enter the OTP sent to";
+  static const String mobileNumber = " +9779800000000.";
+  static const String editNumber = " Edit Number";
+  static const String dintReceive = "Didn’t receive the code?";
+  static const String resendOtp = " Resend OTP";
 }

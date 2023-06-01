@@ -17,8 +17,11 @@ class AppAssets {
   static const String profile = "${iconBasePath}profile.svg";
   static const String profileFill = "${iconBasePath}profile_fill.svg";
 
-  ///
+  /// log in screen
   static const String pageOne = "${imageBasePath}Illustration 1 1.png";
   static const String pageTwo = "${imageBasePath}Illustration2 1.png";
   static const String pageThree = "${imageBasePath}Illustration 3.png";
+  static const String fb = "${iconBasePath}facebook.svg";
+  static const String google = "${iconBasePath}google.svg";
+  static const String twitter = "${iconBasePath}twitter.svg";
 }

@@ -2,9 +2,9 @@ import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-  final String? button;
+  final String? buttonText;
   final void Function()? onPressed;
-  const AppButton({Key? key, this.button, this.onPressed}) : super(key: key);
+  const AppButton({Key? key, this.buttonText, this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class AppButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Text(button!),
+      child: Text(buttonText!),
     );
   }
 }

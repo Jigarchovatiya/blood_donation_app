@@ -21,13 +21,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final List pageList = [
-      {
-        const PageOne(),
-        const PageTwo(),
-        const PageThree(),
-      }
-    ];
     final PageController pageController = PageController(initialPage: 0);
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -86,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         onPressed: () {
                           selectedIndex == 2 ? Navigator.pushNamed(context, RoutesName.splashScreen) : null;
                         },
-                        button: selectedIndex == 2 ? AppStrings.letsBegin : AppStrings.continueButton,
+                        buttonText: selectedIndex == 2 ? AppStrings.letsBegin : AppStrings.continueButton,
                       ),
                       SizedBox(
                         height: height / 25,
