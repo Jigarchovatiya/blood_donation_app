@@ -1,4 +1,4 @@
-import 'package:blood_donation_app/view/entry_point/otp_log_in_screen.dart';
+import 'package:blood_donation_app/view/entry_point/create_account_one.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OtpLogInScreen(),
+      home: const CreateAccountOne(),
     );
   }
 }

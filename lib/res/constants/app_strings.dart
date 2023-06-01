@@ -35,4 +35,12 @@ class AppStrings {
   static const String editNumber = " Edit Number";
   static const String dintReceive = "Didn’t receive the code?";
   static const String resendOtp = " Resend OTP";
+
+  /// log in screen
+  static const String fullName = "Full Name";
+  static const String age = "Age";
+  static const String bloodGroup = "Blood Group";
+  static const String gender = "Gender";
+  static const String weight = "Weight(kg)";
+  static const String email = "Email";
 }
