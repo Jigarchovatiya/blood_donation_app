@@ -20,7 +20,7 @@ class AppStrings {
   static const String account = "Account";
   static const String profile = "Profile";
   static const String finish = "Finish";
-  static const String textOne = "We’ll send one-time password to\nyour mobile number.";
+  static const String textOne = "We’ll send verification request \non your Email .";
   static const String continuing = "By continuing you agree to our ";
   static const String terms = "“Terms &\nConditions”";
   static const String readOur = ". Read Our";
