@@ -37,10 +37,16 @@ class AppStrings {
   static const String resendOtp = " Resend OTP";
 
   /// log in screen
+  static const String name = "Name";
   static const String fullName = "Full Name";
   static const String age = "Age";
   static const String bloodGroup = "Blood Group";
   static const String gender = "Gender";
   static const String weight = "Weight(kg)";
   static const String email = "Email";
+
+  /// log in screen
+  static const String emailExample = "example@gmail.com";
+  static const String password = "Password";
+  static const String enterPassword = "Enter Password";
 }

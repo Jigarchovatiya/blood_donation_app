@@ -1,9 +1,9 @@
 class RoutesName {
   static const String splashScreen = "/";
   static const String onBoarding = "/onBoarding";
-  static const String pageOne = "/pageOne";
-  static const String pageTwo = "/pageTwo";
-  static const String pageThree = "/pageThree";
+  // static const String pageOne = "/pageOne";
+  // static const String pageTwo = "/pageTwo";
+  // static const String pageThree = "/pageThree";
   // static const String logInScreen = "/logInScreen";
   // static const String continueWithScreen = "/continueWithScreen";
   // static const String otpLogInScreen = "/otpLogInScreen";

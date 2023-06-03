@@ -3,7 +3,6 @@ import 'package:blood_donation_app/res/common/app_circle_avatar.dart';
 import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:blood_donation_app/res/constants/app_strings.dart';
-import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -205,13 +204,13 @@ class _LogInScreenState extends State<LogInScreen> {
                 AppButton(
                   buttonText: AppStrings.continueButton,
                   onPressed: () {
-                    isChecked == true
-                        ? Navigator.pushNamed(
-                            context,
-                            RoutesName.pageThree,
-                          )
-                        : null;
-                    setState(() {});
+                    // isChecked == true
+                    //     ? Navigator.pushNamed(
+                    //         context,
+                    //         RoutesName.pageThree,
+                    //       )
+                    //     : null;
+                    // setState(() {});
                   },
                 ),
                 SizedBox(height: height / 20),

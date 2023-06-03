@@ -6,9 +6,10 @@ class AppTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? hintText;
   final double? width;
+  final EdgeInsetsGeometry? padding;
   final TextInputAction? textInputAction;
   final Widget? suffixIcon;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
   final String? label;
   final List<TextInputFormatter>? inputFormatters;
   final FormFieldValidator<String>? validator;
@@ -28,7 +29,7 @@ class AppTextField extends StatelessWidget {
   const AppTextField({
     Key? key,
     this.controller,
-    this.keyboardType = TextInputType.text,
+    this.keyboardType,
     this.label,
     this.inputFormatters,
     this.validator,
@@ -48,11 +49,13 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.textInputAction,
     this.width,
+    this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: padding,
       width: width,
       child: TextFormField(
         textInputAction: textInputAction,
@@ -60,6 +63,7 @@ class AppTextField extends StatelessWidget {
         validator: validator,
         obscureText: obscureText,
         autofocus: false,
+        keyboardType: keyboardType,
         decoration: InputDecoration(
           fillColor: AppColors.textFillColor,
           filled: true,

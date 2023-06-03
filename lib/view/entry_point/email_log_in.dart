@@ -5,7 +5,6 @@ import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:blood_donation_app/res/constants/app_strings.dart';
 import 'package:blood_donation_app/res/extension/extensions.dart';
-import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -164,6 +163,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                   validator: (value) => value!.isValidEmail() ? null : "Please Enter Correct E-mail",
                   controller: email,
                   hintText: "Enter Email",
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(height: height / 50),
                 Row(
@@ -217,13 +217,13 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                 AppButton(
                   buttonText: AppStrings.continueButton,
                   onPressed: () {
-                    isChecked == true
-                        ? Navigator.pushNamed(
-                            context,
-                            RoutesName.pageThree,
-                          )
-                        : null;
-                    setState(() {});
+                    // isChecked == true
+                    //     ? Navigator.pushNamed(
+                    //         context,
+                    //         RoutesName.onBoarding,
+                    //       )
+                    //     : null;
+                    // setState(() {});
                   },
                 ),
                 SizedBox(height: height / 20),
