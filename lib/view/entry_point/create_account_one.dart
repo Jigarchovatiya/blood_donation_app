@@ -15,10 +15,16 @@ class CreateAccountOne extends StatefulWidget {
 }
 
 class _CreateAccountOneState extends State<CreateAccountOne> {
+  User? person;
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   addUser() async {
     try {
-      await firebaseAuth.createUserWithEmailAndPassword(email: email.text, password: password.text);
+      await firebaseAuth.createUserWithEmailAndPassword(email: email.text, password: password.text).then((value) {
+        debugPrint("Value--> ${value.user}");
+        person = value.user;
+        person!.sendEmailVerification();
+        Navigator.pop(context);
+      });
     } on FirebaseAuthException catch (e) {
       if (e.code == "weak-password") {
         debugPrint("your password is too weak");
@@ -29,8 +35,6 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
       debugPrint("error $e");
     }
   }
-
-  User? person;
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -228,7 +232,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        AppTextField(
+                        const AppTextField(
                           width: 164,
                           hintText: "20",
                         ),
@@ -236,10 +240,10 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                           width: 164,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: DropdownButton(
-                              style: TextStyle(fontSize: 20, color: AppColors.textColor),
-                              icon: Icon(Icons.keyboard_arrow_down_rounded, size: 30),
+                              style: const TextStyle(fontSize: 20, color: AppColors.textColor),
+                              icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 30),
                               value: bloodGroupData,
                               isExpanded: true,
                               items: bloodGroupList
@@ -279,10 +283,10 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                           width: 164,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: DropdownButton(
-                              style: TextStyle(fontSize: 20, color: AppColors.textColor),
-                              icon: Icon(Icons.keyboard_arrow_down_rounded, size: 30),
+                              style: const TextStyle(fontSize: 20, color: AppColors.textColor),
+                              icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 30),
                               value: genderData,
                               isExpanded: true,
                               items: genderList
@@ -299,7 +303,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                             ),
                           ),
                         ),
-                        AppTextField(
+                        const AppTextField(
                           width: 164,
                           hintText: "60",
                         ),
@@ -336,8 +340,12 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
               ),
               SizedBox(height: height / 20),
               AppButton(
+                fixedSize: Size(345, 54),
                 buttonText: AppStrings.continueButton,
-                onPressed: () {},
+                onPressed: () {
+                  addUser();
+                  debugPrint("user --> $person");
+                },
               ),
             ],
           ),

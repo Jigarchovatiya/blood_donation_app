@@ -49,4 +49,26 @@ class AppStrings {
   static const String emailExample = "example@gmail.com";
   static const String password = "Password";
   static const String enterPassword = "Enter Password";
+
+  /// create account
+  static const String registeredSuccessfully = "Registered Successfully";
+  static const String goToHomePage = "Go to home page";
+
+  ///home page
+  static const String bloodDonation = "Blood Donation";
+  static const String donationCampaigns = "Donation campaigns near you";
+  static const String seeAll = "See All";
+  static const String donateAndSaveLife = "Donate and save life";
+  static const String map = "Kadaghari, Kathmandu";
+  static const String calender = "2023/05/26";
+  static const String clock = "10 AM";
+  static const String donate = "Donate";
+  static const String donorsNearYou = "Donors Near You";
+  static const String donorOne = "Saroj Shah";
+  static const String donorTwo = "Puran Gurung";
+  static const String donorThree = "Bishal Kafle";
+  static const String donorFour = "Arbind Shah";
+  static const String donorFive = "John Lock";
+  static const String donorSix = "Sandesh Niroula";
+  static const String donorSeven = "John Lock";
 }

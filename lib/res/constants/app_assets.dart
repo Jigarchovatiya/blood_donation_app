@@ -24,4 +24,20 @@ class AppAssets {
   static const String fb = "${iconBasePath}facebook.svg";
   static const String google = "${iconBasePath}google.svg";
   static const String twitter = "${iconBasePath}twitter.svg";
+
+  /// create account two
+  static const String verified = "${iconBasePath}verified.png";
+
+  /// home page
+  static const String donateAndSaveLife = "${imageBasePath}image1.png";
+  static const String map = "${iconBasePath}map-pin.svg";
+  static const String calender = "${iconBasePath}calendar.svg";
+  static const String clock = "${iconBasePath}clock.svg";
+  static const String profileOne = "${imageBasePath}profile_one.png";
+  static const String profileTwo = "${imageBasePath}profile_two.png";
+  static const String profileThree = "${imageBasePath}profile_three.png";
+  static const String profileFour = "${imageBasePath}profile_four.png";
+  static const String profileFive = "${imageBasePath}profile_Five.png";
+  static const String profileSix = "${imageBasePath}profile_six.png";
+  static const String profileSeven = "${imageBasePath}profile_Five.png";
 }

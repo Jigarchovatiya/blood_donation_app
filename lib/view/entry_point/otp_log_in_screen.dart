@@ -195,6 +195,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                 ),
                 SizedBox(height: height / 20),
                 AppButton(
+                  fixedSize: Size(345, 54),
                   onPressed: () {},
                   buttonText: AppStrings.continueButton,
                 ),

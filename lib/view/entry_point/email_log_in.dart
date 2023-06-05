@@ -215,6 +215,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                 ),
                 SizedBox(height: height / 20),
                 AppButton(
+                  fixedSize: Size(345, 54),
                   buttonText: AppStrings.continueButton,
                   onPressed: () {
                     // isChecked == true

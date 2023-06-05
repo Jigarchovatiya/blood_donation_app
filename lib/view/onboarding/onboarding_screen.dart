@@ -115,6 +115,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         height: height / 20,
                       ),
                       AppButton(
+                        fixedSize: Size(345, 54),
                         onPressed: () {
                           if (selectedIndex == 2) {
                             Navigator.pushNamed(context, RoutesName.onBoarding);
