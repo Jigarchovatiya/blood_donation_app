@@ -19,7 +19,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    // double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.scaffoldBg,
       appBar: AppBar(
@@ -30,7 +30,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back_ios, size: 20),
+          child: const Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: const Text(
           AppStrings.appBarTitle,
@@ -58,7 +58,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
-                      Row(
+                      const Row(
                         children: [
                           AppCircleAvatar(
                             backgroundColor: Color(0xffFCBA04),
@@ -91,11 +91,11 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                             ),
                           ),
                           AppCircleAvatar(
+                            backgroundColor: Color(0xffE6E6E6),
                             child: Text(
                               "3",
                               style: TextStyle(color: AppColors.black, fontSize: 20, fontWeight: FontWeight.w600),
                             ),
-                            backgroundColor: Color(0xffE6E6E6),
                           ),
                         ],
                       ),
@@ -135,11 +135,11 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: AppStrings.enterOtp,
                         style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w500, fontSize: 18),
                       ),
-                      TextSpan(
+                      const TextSpan(
                         text: AppStrings.mobileNumber,
                         style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w800, fontSize: 18),
                       ),
@@ -173,7 +173,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: AppStrings.dintReceive,
                         style: TextStyle(
                           color: AppColors.textColor,
@@ -195,7 +195,10 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                 ),
                 SizedBox(height: height / 20),
                 AppButton(
-                  fixedSize: Size(345, 54),
+                  borderRadius: BorderRadius.circular(30),
+                  backgroundColor: AppColors.materialColor,
+                  foregroundColor: AppColors.white,
+                  fixedSize: const Size(345, 54),
                   onPressed: () {},
                   buttonText: AppStrings.continueButton,
                 ),

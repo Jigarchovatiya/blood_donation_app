@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../res/common/app_button.dart';
-import '../../res/constants/app_assets.dart';
-import '../../res/constants/app_strings.dart';
+import '../../../res/common/app_button.dart';
+import '../../../res/constants/app_assets.dart';
+import '../../../res/constants/app_strings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        AppStrings.donationCampaigns,
+                        AppStrings.donationCampaignsNearYou,
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
@@ -184,6 +184,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     AppButton(
+                                      borderRadius: BorderRadius.circular(30),
+                                      backgroundColor: AppColors.materialColor,
+                                      foregroundColor: AppColors.white,
                                       fixedSize: const Size(170, 30),
                                       buttonText: AppStrings.donate,
                                       onPressed: () {},

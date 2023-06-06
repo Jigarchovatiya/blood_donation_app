@@ -147,6 +147,9 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
               ),
               SizedBox(height: height / 8),
               AppButton(
+                borderRadius: BorderRadius.circular(30),
+                backgroundColor: AppColors.materialColor,
+                foregroundColor: AppColors.white,
                 fixedSize: Size(345, 54),
                 onPressed: () {},
                 buttonText: AppStrings.goToHomePage,

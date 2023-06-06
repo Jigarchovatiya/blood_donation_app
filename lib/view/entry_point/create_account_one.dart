@@ -340,7 +340,10 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
               ),
               SizedBox(height: height / 20),
               AppButton(
-                fixedSize: Size(345, 54),
+                borderRadius: BorderRadius.circular(30),
+                backgroundColor: AppColors.materialColor,
+                foregroundColor: AppColors.white,
+                fixedSize: const Size(345, 54),
                 buttonText: AppStrings.continueButton,
                 onPressed: () {
                   addUser();

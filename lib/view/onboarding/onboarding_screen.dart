@@ -115,6 +115,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         height: height / 20,
                       ),
                       AppButton(
+                        borderRadius: BorderRadius.circular(30),
+                        backgroundColor: AppColors.materialColor,
+                        foregroundColor: AppColors.white,
                         fixedSize: Size(345, 54),
                         onPressed: () {
                           if (selectedIndex == 2) {

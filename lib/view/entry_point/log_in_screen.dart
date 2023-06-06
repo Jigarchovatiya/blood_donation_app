@@ -202,6 +202,9 @@ class _LogInScreenState extends State<LogInScreen> {
                 ),
                 SizedBox(height: height / 20),
                 AppButton(
+                  borderRadius: BorderRadius.circular(30),
+                  backgroundColor: AppColors.materialColor,
+                  foregroundColor: AppColors.white,
                   fixedSize: Size(345, 54),
                   buttonText: AppStrings.continueButton,
                   onPressed: () {

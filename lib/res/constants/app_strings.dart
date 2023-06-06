@@ -53,10 +53,11 @@ class AppStrings {
   /// create account
   static const String registeredSuccessfully = "Registered Successfully";
   static const String goToHomePage = "Go to home page";
+  static const String backToHomePage = "Back to home page";
 
   ///home page
   static const String bloodDonation = "Blood Donation";
-  static const String donationCampaigns = "Donation campaigns near you";
+  static const String donationCampaignsNearYou = "Donation campaigns near you";
   static const String seeAll = "See All";
   static const String donateAndSaveLife = "Donate and save life";
   static const String map = "Kadaghari, Kathmandu";
@@ -71,4 +72,15 @@ class AppStrings {
   static const String donorFive = "John Lock";
   static const String donorSix = "Sandesh Niroula";
   static const String donorSeven = "John Lock";
+
+  /// donation campaign
+  static const String donationCampaigns = "Donation campaigns";
+  static const String downloadPdf = "Download PDF receipt";
+  static const String personalInfo = "Personal info";
+  static const String lastDonatedOn = "Last Donated on";
+  static const String anyCurrentMedication = "Any current medication";
+  static const String additionalInformation = "Additional information(optional)";
+  static const String yourAnswer = "Your answer";
+  static const String clearForm = "Clear form";
+  static const String next = "Next";
 }
