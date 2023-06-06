@@ -29,10 +29,13 @@ class AppAssets {
   static const String verified = "${iconBasePath}verified.png";
 
   /// home page
-  static const String donateAndSaveLife = "${imageBasePath}image1.png";
   static const String map = "${iconBasePath}map-pin.svg";
   static const String calender = "${iconBasePath}calendar.svg";
   static const String clock = "${iconBasePath}clock.svg";
+  static const String chat = "${iconBasePath}chat.svg";
+  static const String call = "${iconBasePath}phone.svg";
+  static const String mapGray = "${iconBasePath}map_gray.svg";
+  static const String donateAndSaveLife = "${imageBasePath}image1.png";
   static const String profileOne = "${imageBasePath}profile_one.png";
   static const String profileTwo = "${imageBasePath}profile_two.png";
   static const String profileThree = "${imageBasePath}profile_three.png";

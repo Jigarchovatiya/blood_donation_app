@@ -345,6 +345,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                 foregroundColor: AppColors.white,
                 fixedSize: const Size(345, 54),
                 buttonText: AppStrings.continueButton,
+                side: BorderSide(style: BorderStyle.none),
                 onPressed: () {
                   addUser();
                   debugPrint("user --> $person");

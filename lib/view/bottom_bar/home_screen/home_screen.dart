@@ -189,6 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       foregroundColor: AppColors.white,
                                       fixedSize: const Size(170, 30),
                                       buttonText: AppStrings.donate,
+                                      side: BorderSide(style: BorderStyle.none),
                                       onPressed: () {},
                                     ),
                                   ],
@@ -287,8 +288,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       children: [
                         Image.asset(profileImageList[index], height: 78),
-                        const SizedBox(width: 10),
+                        SizedBox(width: width / 30),
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -298,9 +300,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 16,
                               ),
                             ),
+                            SizedBox(height: height / 80),
                             Row(
                               children: [
-                                SvgPicture.asset(AppAssets.map),
+                                SvgPicture.asset(AppAssets.mapGray),
+                                SizedBox(width: width / 50),
                                 const Text(
                                   "Kadaghari, Kathmandu",
                                   style: TextStyle(
@@ -310,9 +314,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
-                            const Row(
+                            SizedBox(height: height / 80),
+                            Row(
                               children: [
-                                Icon(Icons.call_outlined, color: AppColors.textColor),
+                                SvgPicture.asset(AppAssets.call),
+                                SizedBox(width: width / 50),
                                 Text(
                                   "+977 98654321987",
                                   style: TextStyle(
@@ -324,16 +330,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
+                        Spacer(),
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               bloodGroupList[index],
+                              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
                             ),
+                            SizedBox(height: height / 50),
                             CircleAvatar(
-                              radius: 20,
+                              radius: 18,
                               foregroundColor: Colors.white,
                               backgroundColor: AppColors.materialColor,
-                              child: const Icon(Icons.chat),
+                              child: SvgPicture.asset(AppAssets.chat),
                             ),
                           ],
                         ),

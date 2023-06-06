@@ -118,6 +118,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         borderRadius: BorderRadius.circular(30),
                         backgroundColor: AppColors.materialColor,
                         foregroundColor: AppColors.white,
+                        side: BorderSide(style: BorderStyle.none),
                         fixedSize: Size(345, 54),
                         onPressed: () {
                           if (selectedIndex == 2) {

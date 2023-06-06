@@ -219,6 +219,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
                   fixedSize: Size(345, 54),
+                  side: BorderSide(style: BorderStyle.none),
                   buttonText: AppStrings.continueButton,
                   onPressed: () {
                     // isChecked == true

@@ -199,6 +199,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
                   fixedSize: const Size(345, 54),
+                  side: BorderSide(style: BorderStyle.none),
                   onPressed: () {},
                   buttonText: AppStrings.continueButton,
                 ),

@@ -83,4 +83,6 @@ class AppStrings {
   static const String yourAnswer = "Your answer";
   static const String clearForm = "Clear form";
   static const String next = "Next";
+  static const String donors = "Donors";
+  static const String campaigns = "Campaigns";
 }
