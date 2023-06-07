@@ -18,20 +18,6 @@ class EmailLogInScreen extends StatefulWidget {
 
 class _EmailLogInScreenState extends State<EmailLogInScreen> {
   bool isChecked = false;
-  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  addUser() async {
-    try {
-      await firebaseAuth.createUserWithEmailAndPassword(email: email.text, password: password.text);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "weak-password") {
-        debugPrint("your password is too weak");
-      } else if (e.code == "e-mail is used once") {
-        debugPrint("this email has already an account logged in ");
-      }
-    } catch (e) {
-      debugPrint("error $e");
-    }
-  }
 
   User? person;
 
@@ -218,8 +204,8 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
-                  fixedSize: Size(345, 54),
-                  side: BorderSide(style: BorderStyle.none),
+                  fixedSize: const Size(345, 54),
+                  side: const BorderSide(style: BorderStyle.none),
                   buttonText: AppStrings.continueButton,
                   onPressed: () {
                     // isChecked == true

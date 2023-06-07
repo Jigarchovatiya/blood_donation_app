@@ -85,4 +85,24 @@ class AppStrings {
   static const String next = "Next";
   static const String donors = "Donors";
   static const String campaigns = "Campaigns";
+  static const String timeSlot = "Time Slot";
+  static const String review = "Review";
+  static const String selectASuitableTimeSlot = "Select a suitable time slot for you";
+  static const String reviewYourResponse = "Review your response and click submit";
+  static const String campaignDetails = "Campaign Details";
+  static const String refNumber = "Ref number";
+  static const String campaignName = "Campaign name";
+  static const String donateBloodSaveLife = "Donate Blood Save Life";
+  static const String campaignDate = "Campaign Date";
+  static const String refNo = "005878";
+  static const String campaignDt = "2023/07/02";
+  static const String donorName = "DonorName";
+  static const String lastDonation = "Last Donation";
+  static const String currentMedication = "Current Medication";
+  static const String submit = "Submit";
+  static const String back = "Back";
+
+  /// donors detail
+  static const String donorDetails = "Donors Details";
+  static const String call = "Call";
 }

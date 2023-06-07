@@ -25,4 +25,5 @@ class AppColors {
   static const Color textFillColor = Color(0xFFD6EEF1);
   static const Color homeBg = Color(0xFFFFF5F5);
   static const Color buttonBg = Color(0xFFE6E6E6);
+  static const Color dividerGray = Color(0xFF999999);
 }

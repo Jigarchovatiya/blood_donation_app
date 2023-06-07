@@ -43,4 +43,7 @@ class AppAssets {
   static const String profileFive = "${imageBasePath}profile_Five.png";
   static const String profileSix = "${imageBasePath}profile_six.png";
   static const String profileSeven = "${imageBasePath}profile_Five.png";
+
+  /// donors detail
+  static const String profileImage = "${imageBasePath}profile_image.png";
 }

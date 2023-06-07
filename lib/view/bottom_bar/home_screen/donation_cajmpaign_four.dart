@@ -5,14 +5,14 @@ import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
-class BloodDonationScreen extends StatefulWidget {
-  const BloodDonationScreen({super.key});
+class DonationCampaignFour extends StatefulWidget {
+  const DonationCampaignFour({super.key});
 
   @override
-  State<BloodDonationScreen> createState() => _BloodDonationScreenState();
+  State<DonationCampaignFour> createState() => _DonationCampaignFourState();
 }
 
-class _BloodDonationScreenState extends State<BloodDonationScreen> {
+class _DonationCampaignFourState extends State<DonationCampaignFour> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

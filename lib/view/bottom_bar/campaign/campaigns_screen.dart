@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../res/common/app_button.dart';
-import '../../res/constants/app_assets.dart';
-import '../../res/constants/app_colors.dart';
-import '../../res/constants/app_strings.dart';
+import '../../../res/common/app_button.dart';
+import '../../../res/constants/app_assets.dart';
+import '../../../res/constants/app_colors.dart';
+import '../../../res/constants/app_strings.dart';
 
 class CampaignsScreen extends StatefulWidget {
   const CampaignsScreen({Key? key}) : super(key: key);
