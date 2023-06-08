@@ -7,6 +7,8 @@ import 'package:blood_donation_app/view/bottom_bar/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../res/constants/app_colors.dart';
+
 class BottomBarScreen extends StatefulWidget {
   const BottomBarScreen({Key? key}) : super(key: key);
 
@@ -28,7 +30,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     return Scaffold(
       body: screenList.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: const Color(0xff999999),
+        unselectedItemColor: AppColors.textFillColor,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
         onTap: (value) => setState(() {

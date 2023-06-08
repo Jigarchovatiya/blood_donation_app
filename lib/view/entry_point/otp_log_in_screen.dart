@@ -1,4 +1,7 @@
 import 'package:blood_donation_app/res/common/app_button.dart';
+import 'package:blood_donation_app/view/entry_point/create_account_one.dart';
+import 'package:blood_donation_app/view/entry_point/log_in_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
@@ -157,9 +160,9 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     focusBorderColor: AppColors.materialColor,
                   ),
                   margin: const EdgeInsets.only(top: 30),
-                  length: 4,
+                  length: 6,
                   isDense: true,
-                  width: 250,
+                  width: 350,
                   fieldWidth: 50,
                   fieldStyle: FieldStyle.box,
                   outlineBorderRadius: 5,
@@ -168,12 +171,12 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     color: AppColors.materialColor,
                   ),
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height / 30),
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      const TextSpan(
+                      TextSpan(
                         text: AppStrings.dintReceive,
                         style: TextStyle(
                           color: AppColors.textColor,
@@ -182,6 +185,13 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                         ),
                       ),
                       TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LogInScreen(),
+                                ),
+                              ),
                         text: AppStrings.resendOtp,
                         style: TextStyle(
                           decoration: TextDecoration.underline,
@@ -200,7 +210,15 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   foregroundColor: AppColors.white,
                   fixedSize: const Size(345, 54),
                   side: BorderSide(style: BorderStyle.none),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.pushNamed(context, RoutesName.createAccountOne);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CreateAccountOne(),
+                      ),
+                    );
+                  },
                   buttonText: AppStrings.continueButton,
                 ),
               ],

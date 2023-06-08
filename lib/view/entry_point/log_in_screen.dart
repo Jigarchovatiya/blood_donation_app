@@ -6,8 +6,10 @@ import 'package:blood_donation_app/res/constants/app_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import '../../utils/routes/routes_name.dart';
 import 'otp_log_in_screen.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -30,26 +32,50 @@ class _LogInScreenState extends State<LogInScreen> {
   // }
   String? phone;
   String? verificationCode;
-  final phoneNo = TextEditingController();
-  final gloablekey = GlobalKey<FormState>();
+  final globalKey = GlobalKey<FormState>();
   Future sendOtpService() async {
     FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: "+91${phoneNo.text}",
-      verificationCompleted: (phoneAuthCredential) {},
-      verificationFailed: (error) {
+      phoneNumber: "+91${mobile.text}",
+      verificationCompleted: (phoneAuthCredential) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text("Otp sent to $phoneNo"),
+            content: Text("Otp sent to ${mobile.text}"),
+          ),
+        );
+      },
+      verificationFailed: (error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Otp failed to send"),
           ),
         );
       },
       codeSent: (verificationId, forceResendingToken) {
-        setState(() {
-          verificationCode = verificationId;
-        });
+        setState(() {});
+        verificationCode = verificationId;
       },
       codeAutoRetrievalTimeout: (verificationId) {},
     );
+  }
+
+  User? userData;
+  UserCredential? userCredential;
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   bool isChecked = false;
@@ -72,7 +98,9 @@ class _LogInScreenState extends State<LogInScreen> {
         centerTitle: true,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
+            },
             child: const Text(
               AppStrings.skip,
               style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline),
@@ -85,7 +113,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Form(
-              key: gloablekey,
+              key: globalKey,
               child: Column(
                 children: [
                   Padding(
@@ -178,6 +206,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                   IntlPhoneField(
+                    controller: mobile,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
@@ -250,7 +279,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     side: const BorderSide(style: BorderStyle.none),
                     buttonText: AppStrings.continueButton,
                     onPressed: () {
-                      if (gloablekey.currentState!.validate()) {
+                      if (globalKey.currentState!.validate()) {
                         debugPrint("validation");
                         sendOtpService().then(
                           (value) => Navigator.push(
@@ -311,7 +340,9 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                       SizedBox(width: width / 30),
                       InkWell(
-                        onTap: () {
+                        onTap: () async {
+                          userCredential = await signInWithGoogle();
+                          userData = userCredential!.user;
                           debugPrint("Google Taped -->");
                         },
                         child: AppCircleAvatar(

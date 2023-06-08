@@ -105,4 +105,6 @@ class AppStrings {
   /// donors detail
   static const String donorDetails = "Donors Details";
   static const String call = "Call";
+
+  /// Profile
 }

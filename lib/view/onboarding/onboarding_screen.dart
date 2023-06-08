@@ -58,7 +58,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Navigator.pushNamed(context, RoutesName.)
+                          Navigator.pushNamedAndRemoveUntil(context, RoutesName.logInScreen, (route) => false);
                         },
                         child: const Text(
                           AppStrings.skip,
@@ -70,7 +70,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
                 Container(
                   color: AppColors.scaffoldBg,
-                  height: height / 1.55,
+                  height: height / 1.50,
                   child: PageView(
                     onPageChanged: (value) {
                       selectedIndex = value;
@@ -81,7 +81,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       return Column(
                         children: [
                           Align(
-                            heightFactor: 0.95,
+                            heightFactor: 1.00,
                             child: Image.asset(
                               value["image"],
                               height: 350,
@@ -95,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.black),
                           ),
                           SizedBox(
-                            height: height / 30,
+                            height: height / 90,
                           ),
                           Text(
                             value["subText"],
@@ -122,7 +122,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         fixedSize: Size(345, 54),
                         onPressed: () {
                           if (selectedIndex == 2) {
-                            Navigator.pushNamed(context, RoutesName.onBoarding);
+                            Navigator.pushNamed(context, RoutesName.logInScreen);
                           } else {
                             pageController.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.linear);
                           }
