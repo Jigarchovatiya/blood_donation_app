@@ -26,4 +26,7 @@ class AppColors {
   static const Color homeBg = Color(0xFFFFF5F5);
   static const Color buttonBg = Color(0xFFE6E6E6);
   static const Color dividerGray = Color(0xFF999999);
+  static const Color buttonRed = Color(0xFFFFEFEB);
+  static const Color textGreen = Color(0xFF3D8046);
+  static const Color buttonGreen = Color(0xFFD6FFDC);
 }

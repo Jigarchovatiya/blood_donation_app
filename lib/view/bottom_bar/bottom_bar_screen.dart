@@ -28,6 +28,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     ];
     int selectedIndex = 0;
     return Scaffold(
+      backgroundColor: AppColors.homeBg,
       body: screenList.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: AppColors.textFillColor,

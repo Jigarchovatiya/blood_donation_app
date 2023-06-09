@@ -19,6 +19,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
     double width = MediaQuery.of(context).size.width;
     String? selectedTime = "";
     return Scaffold(
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,

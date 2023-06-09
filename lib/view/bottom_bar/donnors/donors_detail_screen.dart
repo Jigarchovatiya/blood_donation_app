@@ -18,6 +18,7 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
     double height = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,

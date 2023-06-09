@@ -79,7 +79,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppColors.scaffoldBg,
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,

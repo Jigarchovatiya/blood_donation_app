@@ -107,4 +107,7 @@ class AppStrings {
   static const String call = "Call";
 
   /// Profile
+
+  /// history
+  static const String history = "History";
 }

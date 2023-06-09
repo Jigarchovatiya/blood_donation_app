@@ -17,6 +17,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,
