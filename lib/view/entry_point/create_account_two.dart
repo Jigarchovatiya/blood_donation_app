@@ -19,13 +19,14 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         toolbarHeight: 80,
         leading: TextButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back_ios, size: 20),
+          child: const Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: const Text(
           AppStrings.appBarTitle,
@@ -123,7 +124,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Container(
                 height: 340,
                 width: 330,
@@ -140,7 +141,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                         AppAssets.verified,
                         height: 95,
                       ),
-                      Text(AppStrings.registeredSuccessfully, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+                      const Text(AppStrings.registeredSuccessfully, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
@@ -150,8 +151,8 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: Size(345, 54),
-                side: BorderSide(style: BorderStyle.none),
+                fixedSize: const Size(345, 54),
+                side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {},
                 buttonText: AppStrings.goToHomePage,
               ),

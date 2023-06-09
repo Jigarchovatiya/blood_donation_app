@@ -4,6 +4,8 @@ import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
+import '../../res/constants/app_colors.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -22,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: const Color(0xC2FFFFFF),
+      backgroundColor: AppColors.homeBg,
       body: SafeArea(
         child: Center(
           child: Column(

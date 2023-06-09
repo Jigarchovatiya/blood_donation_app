@@ -24,7 +24,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
     double height = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppColors.scaffoldBg,
+      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         backgroundColor: AppColors.transparent,
         elevation: 0,

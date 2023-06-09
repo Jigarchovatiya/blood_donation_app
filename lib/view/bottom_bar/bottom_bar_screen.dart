@@ -17,26 +17,39 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
+  int selectedIndex = 0;
+
+  final List<Widget> screenList = [
+    const HomeScreen(),
+    const DonnerScreen(),
+    const CampaignsScreen(),
+    const HistoryScreen(),
+    const ProfileScreen(),
+  ];
+
+  void onTabTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final List screenList = [
-      const HomeScreen(),
-      const DonnerScreen(),
-      const CampaignsScreen(),
-      const HistoryScreen(),
-      const ProfileScreen(),
-    ];
-    int selectedIndex = 0;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
-      body: screenList.elementAt(selectedIndex),
+      body: IndexedStack(
+        index: selectedIndex,
+        children: screenList,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: AppColors.textFillColor,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
-        onTap: (value) => setState(() {
-          selectedIndex = value;
-        }),
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: SvgPicture.asset(AppAssets.home),

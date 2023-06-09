@@ -1,4 +1,5 @@
 import 'package:blood_donation_app/res/constants/app_colors.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -189,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       foregroundColor: AppColors.white,
                                       fixedSize: const Size(170, 30),
                                       buttonText: AppStrings.donate,
-                                      side: BorderSide(style: BorderStyle.none),
+                                      side: const BorderSide(style: BorderStyle.none),
                                       onPressed: () {},
                                     ),
                                   ],
@@ -219,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -230,13 +231,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Text(
-                    AppStrings.seeAll,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      decoration: TextDecoration.underline,
-                      color: AppColors.materialColor,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, RoutesName.donor);
+                    },
+                    child: Text(
+                      AppStrings.seeAll,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        decoration: TextDecoration.underline,
+                        color: AppColors.materialColor,
+                      ),
                     ),
                   ),
                 ],

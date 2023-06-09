@@ -48,150 +48,152 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: height / 30,
-                ),
-                Stack(
-                  children: [
-                    Image.asset(
-                      AppAssets.profileImage,
-                      height: 128,
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        padding: const EdgeInsets.all(7),
-                        decoration: const BoxDecoration(
-                          color: AppColors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0x40000000),
-                              offset: Offset(0, 2),
-                              blurRadius: 4,
-                            )
-                          ],
-                        ),
-                        child: Icon(
-                          Icons.camera_alt_outlined,
-                          color: AppColors.materialColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: height / 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Aasma Shrestha",
-                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                    ),
-                    Icon(
-                      Icons.verified,
-                      color: AppColors.materialColor,
-                    )
-                  ],
-                ),
-                const Text(
-                  "aasma@gmail.com",
-                  style: TextStyle(color: AppColors.textColor),
-                ),
-                SizedBox(height: height / 40),
-                const SizedBox(
-                  height: 60,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: height / 30,
+                  ),
+                  Stack(
                     children: [
-                      Column(
-                        children: [
-                          Text(
-                            "20",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                          ),
-                          Text(
-                            "Donation",
-                            style: TextStyle(color: AppColors.textColor),
-                          ),
-                        ],
+                      Image.asset(
+                        AppAssets.profileImage,
+                        height: 128,
                       ),
-                      VerticalDivider(
-                        color: AppColors.dividerGray,
-                        thickness: 1,
-                        endIndent: 470,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "B+",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          padding: const EdgeInsets.all(7),
+                          decoration: const BoxDecoration(
+                            color: AppColors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x40000000),
+                                offset: Offset(0, 2),
+                                blurRadius: 4,
+                              )
+                            ],
                           ),
-                          Text(
-                            "Blood Group",
-                            style: TextStyle(color: AppColors.textColor),
+                          child: Icon(
+                            Icons.camera_alt_outlined,
+                            color: AppColors.materialColor,
                           ),
-                        ],
-                      ),
-                      VerticalDivider(
-                        color: AppColors.dividerGray,
-                        thickness: 1,
-                        endIndent: 470,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "5",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                          ),
-                          Text(
-                            "Campaigns",
-                            style: TextStyle(color: AppColors.textColor),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 7,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          ListTile(
-                            onTap: () {},
-                            leading: profileList[index]["icon"],
-                            title: profileList[index]["title"],
-                            titleTextStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: index == 6 ? AppColors.red : AppColors.textColor,
-                            ),
-                          ),
-                          index == 6
-                              ? const SizedBox()
-                              : const Divider(
-                                  height: 1,
-                                  thickness: 1,
-                                  endIndent: 10,
-                                  indent: 10,
-                                ),
-                        ],
-                      );
-                    },
+                  SizedBox(
+                    height: height / 50,
                   ),
-                ),
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Aasma Shrestha",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      ),
+                      Icon(
+                        Icons.verified,
+                        color: AppColors.materialColor,
+                      )
+                    ],
+                  ),
+                  const Text(
+                    "aasma@gmail.com",
+                    style: TextStyle(color: AppColors.textColor),
+                  ),
+                  SizedBox(height: height / 40),
+                  const SizedBox(
+                    height: 60,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "20",
+                              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                            ),
+                            Text(
+                              "Donation",
+                              style: TextStyle(color: AppColors.textColor),
+                            ),
+                          ],
+                        ),
+                        VerticalDivider(
+                          color: AppColors.dividerGray,
+                          thickness: 1,
+                          endIndent: 470,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "B+",
+                              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                            ),
+                            Text(
+                              "Blood Group",
+                              style: TextStyle(color: AppColors.textColor),
+                            ),
+                          ],
+                        ),
+                        VerticalDivider(
+                          color: AppColors.dividerGray,
+                          thickness: 1,
+                          endIndent: 470,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "5",
+                              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                            ),
+                            Text(
+                              "Campaigns",
+                              style: TextStyle(color: AppColors.textColor),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 7,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            ListTile(
+                              onTap: () {},
+                              leading: profileList[index]["icon"],
+                              title: profileList[index]["title"],
+                              titleTextStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: index == 6 ? AppColors.red : AppColors.textColor,
+                              ),
+                            ),
+                            index == 6
+                                ? const SizedBox()
+                                : const Divider(
+                                    height: 1,
+                                    thickness: 1,
+                                    endIndent: 10,
+                                    indent: 10,
+                                  ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

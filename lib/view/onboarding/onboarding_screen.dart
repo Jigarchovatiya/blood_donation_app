@@ -39,7 +39,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     final PageController pageController = PageController(initialPage: 0);
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.scaffoldBg,
+      backgroundColor: AppColors.homeBg,
       body: SafeArea(
         child: Stack(
           children: [

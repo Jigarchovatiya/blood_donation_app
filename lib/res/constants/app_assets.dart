@@ -46,4 +46,7 @@ class AppAssets {
 
   /// donors detail
   static const String profileImage = "${imageBasePath}profile_image.png";
+
+  /// history
+  static const String calenderGray = "${iconBasePath}calendar_2.svg";
 }

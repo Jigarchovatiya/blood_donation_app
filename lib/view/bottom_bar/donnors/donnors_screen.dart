@@ -76,11 +76,17 @@ class _DonnerScreenState extends State<DonnerScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Text(
-                AppStrings.donorsNearYou,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+              Padding(
+                padding: EdgeInsets.all(height / 80),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    AppStrings.donorsNearYou,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
