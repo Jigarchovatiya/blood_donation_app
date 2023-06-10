@@ -1,11 +1,14 @@
-import 'package:blood_donation_app/view/bottom_bar/bottom_bar_screen.dart';
+import 'package:blood_donation_app/utils/routes/routes.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +25,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const BottomBarScreen(),
-      // routes: appRoutes,
-      // initialRoute: RoutesName.splashScreen,
+      // home: const BottomBarScreen(),
+      routes: appRoutes,
+      initialRoute: RoutesName.splashScreen,
     );
   }
 }

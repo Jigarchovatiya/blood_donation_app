@@ -281,14 +281,20 @@ class _LogInScreenState extends State<LogInScreen> {
                     onPressed: () {
                       if (globalKey.currentState!.validate()) {
                         debugPrint("validation");
-                        sendOtpService().then(
-                          (value) => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const OtpLogInScreen(),
-                            ),
-                          ),
-                        );
+                        isChecked == true
+                            ? sendOtpService().then(
+                                (value) => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => OtpLogInScreen(),
+                                  ),
+                                ),
+                              )
+                            : ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Please allow all terms & conditions"),
+                                ),
+                              );
                       }
                       // mobileAuth();
                       // isChecked == true

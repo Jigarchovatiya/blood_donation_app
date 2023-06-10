@@ -19,6 +19,7 @@ class OtpLogInScreen extends StatefulWidget {
 }
 
 class _OtpLogInScreenState extends State<OtpLogInScreen> {
+  TextEditingController mobile = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -138,12 +139,12 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      const TextSpan(
+                      TextSpan(
                         text: AppStrings.enterOtp,
                         style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w500, fontSize: 18),
                       ),
-                      const TextSpan(
-                        text: AppStrings.mobileNumber,
+                      TextSpan(
+                        text: "${mobile.text}",
                         style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w800, fontSize: 18),
                       ),
                       TextSpan(

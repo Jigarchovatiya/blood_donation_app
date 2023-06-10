@@ -69,7 +69,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                 ),
                 Container(
-                  color: AppColors.scaffoldBg,
+                  color: AppColors.homeBg,
                   height: height / 1.50,
                   child: PageView(
                     onPageChanged: (value) {
