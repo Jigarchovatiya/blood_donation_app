@@ -71,10 +71,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             children: [
                               SizedBox(height: height / 80),
                               const AppCircleAvatar(
-                                child: Icon(Icons.restore),
                                 radius: 24,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
+                                child: Icon(Icons.restore),
                               ),
                             ],
                           ),
@@ -104,7 +104,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
                                   SizedBox(width: width / 50),
-                                  Text("Pokhara-16, Lamachaur, "),
+                                  const Text("Pokhara-16, Lamachaur, "),
                                 ],
                               ),
                             ],
@@ -177,10 +177,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             children: [
                               SizedBox(height: height / 80),
                               const AppCircleAvatar(
-                                child: Icon(Icons.restore),
                                 radius: 24,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
+                                child: Icon(Icons.restore),
                               ),
                             ],
                           ),
@@ -209,7 +209,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
                                   SizedBox(width: width / 50),
-                                  Text("Pokhara-16, Lamachaur, "),
+                                  const Text("Pokhara-16, Lamachaur, "),
                                 ],
                               ),
                             ],

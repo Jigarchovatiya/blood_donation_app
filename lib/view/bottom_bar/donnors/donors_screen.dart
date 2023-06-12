@@ -5,14 +5,16 @@ import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
-class DonnerScreen extends StatefulWidget {
-  const DonnerScreen({Key? key}) : super(key: key);
+class DonorScreen extends StatefulWidget {
+  final Function(String)? onTab;
+
+  const DonorScreen({Key? key, this.onTab}) : super(key: key);
 
   @override
-  State<DonnerScreen> createState() => _DonnerScreenState();
+  State<DonorScreen> createState() => _DonorScreenState();
 }
 
-class _DonnerScreenState extends State<DonnerScreen> {
+class _DonorScreenState extends State<DonorScreen> {
   bool isSelected = false;
   List<Map<String, dynamic>> donationCampaignsList = [
     {
@@ -70,7 +72,7 @@ class _DonnerScreenState extends State<DonnerScreen> {
         backgroundColor: AppColors.materialColor,
         foregroundColor: AppColors.white,
         centerTitle: true,
-        title: Text(AppStrings.donors),
+        title: const Text(AppStrings.donors),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -78,9 +80,9 @@ class _DonnerScreenState extends State<DonnerScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.all(height / 80),
-                child: Align(
+                child: const Align(
                   alignment: Alignment.centerLeft,
-                  child: const Text(
+                  child: Text(
                     AppStrings.donorsNearYou,
                     style: TextStyle(
                       fontSize: 16,

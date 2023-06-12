@@ -1,5 +1,4 @@
 import 'package:blood_donation_app/res/constants/app_colors.dart';
-import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -9,7 +8,9 @@ import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_strings.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final Function(String)? onTab;
+
+  const HomeScreen({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         AppStrings.donationCampaignsNearYou,
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
@@ -103,7 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          widget.onTab!("Campaign");
+                        },
                         child: Text(
                           AppStrings.seeAll,
                           style: TextStyle(
@@ -233,7 +236,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RoutesName.donor);
+                      widget.onTab!("Donor");
                     },
                     child: Text(
                       AppStrings.seeAll,

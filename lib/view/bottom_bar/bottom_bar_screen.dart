@@ -1,6 +1,6 @@
 import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:blood_donation_app/view/bottom_bar/campaign/campaigns_screen.dart';
-import 'package:blood_donation_app/view/bottom_bar/donnors/donnors_screen.dart';
+import 'package:blood_donation_app/view/bottom_bar/donnors/donors_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/history/history_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/home_screen/home_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/profile/profile_screen.dart';
@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../res/constants/app_colors.dart';
+
+int selectedIndex = 0;
 
 class BottomBarScreen extends StatefulWidget {
   const BottomBarScreen({Key? key}) : super(key: key);
@@ -19,28 +21,35 @@ class BottomBarScreen extends StatefulWidget {
 class _BottomBarScreenState extends State<BottomBarScreen> {
   int selectedIndex = 0;
 
-  final List<Widget> screenList = [
-    const HomeScreen(),
-    const DonnerScreen(),
-    const CampaignsScreen(),
-    const HistoryScreen(),
-    const ProfileScreen(),
-  ];
+  List screenList = [];
 
-  void onTabTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
+  onScreenChange(String? value) {
+    debugPrint(value);
+    if (value == "Donor") {
+      selectedIndex = 1;
+    } else if (value == "Campaign") {
+      selectedIndex = 2;
+    }
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    screenList = [
+      const HomeScreen(),
+      DonorScreen(onTab: onScreenChange),
+      CampaignsScreen(onTab: onScreenChange),
+      const HistoryScreen(),
+      const ProfileScreen(),
+    ];
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.homeBg,
-      body: IndexedStack(
-        index: selectedIndex,
-        children: screenList,
-      ),
+      body: screenList.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: AppColors.textFillColor,
         currentIndex: selectedIndex,
