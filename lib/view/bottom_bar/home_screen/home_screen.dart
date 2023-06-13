@@ -1,4 +1,5 @@
 import 'package:blood_donation_app/res/constants/app_colors.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -8,9 +9,9 @@ import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_strings.dart';
 
 class HomeScreen extends StatefulWidget {
-  final Function(String)? onTab;
+  final Function(String)? onTap;
 
-  const HomeScreen({Key? key, this.onTab}) : super(key: key);
+  const HomeScreen({Key? key, this.onTap}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -105,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          widget.onTab!("Campaign");
+                          widget.onTap!("Campaign");
                         },
                         child: Text(
                           AppStrings.seeAll,
@@ -194,7 +195,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fixedSize: Size(width / 2, height / 30),
                                       buttonText: AppStrings.donate,
                                       side: const BorderSide(style: BorderStyle.none),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, RoutesName.donationCampaignOne);
+                                      },
                                     ),
                                   ],
                                 ),
@@ -236,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      widget.onTab!("Donor");
+                      widget.onTap!("Donor");
                     },
                     child: Text(
                       AppStrings.seeAll,

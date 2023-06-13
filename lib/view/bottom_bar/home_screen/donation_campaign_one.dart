@@ -1,5 +1,6 @@
 import 'package:blood_donation_app/res/common/app_button.dart';
 import 'package:blood_donation_app/res/common/app_text_field.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../../res/constants/app_colors.dart';
@@ -13,6 +14,11 @@ class DonationCampaignOne extends StatefulWidget {
 }
 
 class _DonationCampaignOneState extends State<DonationCampaignOne> {
+  TextEditingController name = TextEditingController();
+  TextEditingController age = TextEditingController();
+  TextEditingController weight = TextEditingController();
+  TextEditingController lastDonatedOn = TextEditingController();
+  TextEditingController additionalInformation = TextEditingController();
   String bloodGroupData = "group 1";
   List bloodGroupList = [
     {
@@ -99,6 +105,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -155,7 +162,8 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    const AppTextField(
+                    AppTextField(
+                      controller: name,
                       hintText: AppStrings.fullName,
                     ),
                     SizedBox(height: height / 50),
@@ -165,7 +173,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                           AppStrings.age,
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(width: width / 2.45),
+                        SizedBox(width: width / 2.60),
                         const Text(
                           AppStrings.bloodGroup,
                           style: TextStyle(fontSize: 18),
@@ -175,12 +183,14 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const AppTextField(
-                          width: 164,
+                        AppTextField(
+                          keyboardType: TextInputType.phone,
+                          controller: age,
+                          width: width / 2.4,
                           hintText: "20",
                         ),
                         AppTextField(
-                          width: 164,
+                          width: width / 2.4,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -212,7 +222,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                           AppStrings.weight,
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(width: width / 4),
+                        SizedBox(width: width / 4.55),
                         const Text(
                           AppStrings.lastDonatedOn,
                           style: TextStyle(fontSize: 18),
@@ -222,13 +232,16 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const AppTextField(
-                          width: 164,
+                        AppTextField(
+                          keyboardType: TextInputType.phone,
+                          controller: weight,
+                          width: width / 2.4,
                           hintText: "60",
                         ),
                         AppTextField(
-                          width: 164,
-                          hintText: AppStrings.fullName,
+                          controller: lastDonatedOn,
+                          width: width / 2.4,
+                          hintText: AppStrings.campaignDt,
                           onTap: () {
                             _showDatePicker;
                           },
@@ -275,7 +288,8 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    const AppTextField(
+                    AppTextField(
+                      controller: additionalInformation,
                       keyboardType: TextInputType.text,
                       hintText: AppStrings.yourAnswer,
                     ),
@@ -288,17 +302,28 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      AppStrings.clearForm,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                    TextButton(
+                      child: const Text(
+                        AppStrings.clearForm,
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                      ),
+                      onPressed: () {
+                        name.clear();
+                        age.clear();
+                        weight.clear();
+                        lastDonatedOn.clear();
+                        additionalInformation.clear();
+                      },
                     ),
                     AppButton(
                       borderRadius: BorderRadius.circular(8),
                       foregroundColor: AppColors.white,
-                      side: BorderSide(style: BorderStyle.none),
+                      side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
-                      fixedSize: Size(80, 40),
-                      onPressed: () {},
+                      fixedSize: const Size(80, 40),
+                      onPressed: () {
+                        Navigator.pushNamed(context, RoutesName.donationCampaignTwo);
+                      },
                       buttonText: AppStrings.next,
                     ),
                   ],

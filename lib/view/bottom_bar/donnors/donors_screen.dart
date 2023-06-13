@@ -6,9 +6,9 @@ import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
 class DonorScreen extends StatefulWidget {
-  final Function(String)? onTab;
+  final Function(String)? onTap;
 
-  const DonorScreen({Key? key, this.onTab}) : super(key: key);
+  const DonorScreen({Key? key, this.onTap}) : super(key: key);
 
   @override
   State<DonorScreen> createState() => _DonorScreenState();

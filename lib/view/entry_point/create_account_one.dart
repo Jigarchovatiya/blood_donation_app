@@ -9,7 +9,8 @@ import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
 
 class CreateAccountOne extends StatefulWidget {
-  const CreateAccountOne({Key? key}) : super(key: key);
+  final Function(String)? onTab;
+  const CreateAccountOne({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<CreateAccountOne> createState() => _CreateAccountOneState();
@@ -113,7 +114,9 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
         centerTitle: true,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RoutesName.bottomNavBar);
+            },
             child: const Text(
               AppStrings.skip,
               style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline),

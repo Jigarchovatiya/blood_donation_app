@@ -7,9 +7,9 @@ import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
 class CampaignsScreen extends StatefulWidget {
-  final Function(String)? onTab;
+  final Function(String)? onTap;
 
-  const CampaignsScreen({Key? key, this.onTab}) : super(key: key);
+  const CampaignsScreen({Key? key, this.onTap}) : super(key: key);
 
   @override
   State<CampaignsScreen> createState() => _CampaignsScreenState();

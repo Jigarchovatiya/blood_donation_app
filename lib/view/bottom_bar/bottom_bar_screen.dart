@@ -25,7 +25,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   onScreenChange(String? value) {
     debugPrint(value);
-    if (value == "Donor") {
+    if (value == "Home") {
+      selectedIndex = 0;
+    } else if (value == "Donor") {
       selectedIndex = 1;
     } else if (value == "Campaign") {
       selectedIndex = 2;
@@ -36,9 +38,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   void initState() {
     screenList = [
-      const HomeScreen(),
-      DonorScreen(onTab: onScreenChange),
-      CampaignsScreen(onTab: onScreenChange),
+      HomeScreen(onTap: onScreenChange),
+      DonorScreen(onTap: onScreenChange),
+      CampaignsScreen(onTap: onScreenChange),
       const HistoryScreen(),
       const ProfileScreen(),
     ];
