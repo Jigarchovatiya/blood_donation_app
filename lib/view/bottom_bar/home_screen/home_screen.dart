@@ -88,14 +88,14 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: 250,
+              height: height / 2.6,
               decoration: const BoxDecoration(color: AppColors.white),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         AppStrings.donationCampaignsNearYou,
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
@@ -120,8 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 160,
-                    width: 347,
+                    height: height / 4,
+                    width: width / 1,
                     child: PageView(
                       onPageChanged: (value) {
                         selectedIndex = value;
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       borderRadius: BorderRadius.circular(30),
                                       backgroundColor: AppColors.materialColor,
                                       foregroundColor: AppColors.white,
-                                      fixedSize: const Size(170, 30),
+                                      fixedSize: Size(width / 2, height / 30),
                                       buttonText: AppStrings.donate,
                                       side: const BorderSide(style: BorderStyle.none),
                                       onPressed: () {},
@@ -214,8 +214,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         count: 3,
                         effect: ScrollingDotsEffect(
                           activeDotColor: AppColors.materialColor,
-                          dotHeight: 4,
-                          dotWidth: 25,
+                          dotHeight: height / 150,
+                          dotWidth: width / 15,
                         ), // your preferred effect
                         onDotClicked: (index) {}),
                   ),
@@ -262,8 +262,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width / 20,
                       ),
                       decoration: BoxDecoration(
                         color: isSelected == true ? AppColors.materialColor : AppColors.buttonBg,
@@ -281,15 +281,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(height / 50),
               child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 10),
+                separatorBuilder: (context, index) => SizedBox(height: height / 60),
                 shrinkWrap: true,
                 itemCount: 5,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(height / 55),
                     decoration: BoxDecoration(
                       color: AppColors.textFillColor,
                       borderRadius: BorderRadius.circular(8),
@@ -328,7 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 SvgPicture.asset(AppAssets.call),
                                 SizedBox(width: width / 50),
-                                Text(
+                                const Text(
                                   "+977 98654321987",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
@@ -339,7 +339,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

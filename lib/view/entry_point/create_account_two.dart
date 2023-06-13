@@ -19,8 +19,8 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppColors.homeBg,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         toolbarHeight: 80,
         leading: TextButton(
           onPressed: () {
@@ -126,8 +126,8 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
               ),
               const SizedBox(height: 50),
               Container(
-                height: 340,
-                width: 330,
+                height: height / 2,
+                width: width / 1.2,
                 decoration: BoxDecoration(
                   color: AppColors.textFillColor,
                   borderRadius: BorderRadius.circular(15),
@@ -146,16 +146,17 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                   ),
                 ),
               ),
-              SizedBox(height: height / 8),
+              SizedBox(height: height / 10),
               AppButton(
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: const Size(345, 54),
+                fixedSize: Size(width / 1.14, height / 13),
                 side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {},
                 buttonText: AppStrings.goToHomePage,
               ),
+              SizedBox(height: height / 20),
             ],
           ),
         ),

@@ -22,7 +22,7 @@ class AppStrings {
   static const String finish = "Finish";
   static const String textOne = "We’ll send verification request \non your Email .";
   static const String continuing = "By continuing you agree to our ";
-  static const String terms = "“Terms &\nConditions”";
+  static const String terms = "“Terms & Conditions”";
   static const String readOur = ". Read Our";
   static const String privacyPolicy = " Privacy Policy.";
   static const String orLogInWith = "or login with";

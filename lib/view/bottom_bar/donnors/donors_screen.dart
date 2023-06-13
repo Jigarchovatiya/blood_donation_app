@@ -100,10 +100,10 @@ class _DonorScreenState extends State<DonorScreen> {
                   itemBuilder: (context, index) => InkWell(
                     onTap: () {},
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.symmetric(horizontal: height / 100, vertical: width / 50),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: width / 20,
                         ),
                         decoration: BoxDecoration(
                           color: isSelected == true ? AppColors.materialColor : AppColors.buttonBg,

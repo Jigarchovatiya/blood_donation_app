@@ -51,7 +51,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Container(
-                  height: height / 6,
+                  height: height / 5,
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
@@ -68,7 +68,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(AppAssets.donateAndSaveLife, height: height / 7),
+                      Image.asset(AppAssets.donateAndSaveLife, height: height / 6),
                       const SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,7 +112,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             borderRadius: BorderRadius.circular(30),
                             backgroundColor: AppColors.materialColor,
                             foregroundColor: AppColors.white,
-                            fixedSize: const Size(170, 30),
+                            fixedSize: Size(width / 2, height / 100),
                             buttonText: AppStrings.donate,
                             side: const BorderSide(style: BorderStyle.none),
                             onPressed: () {},

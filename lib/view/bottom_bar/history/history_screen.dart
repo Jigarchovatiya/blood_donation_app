@@ -31,7 +31,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(height / 50),
           child: Column(
             children: [
               const Align(
@@ -49,7 +49,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 itemBuilder: (context, index) {
                   return Container(
                     // margin: EdgeInsets.all(10),
-
                     decoration: BoxDecoration(
                       color: AppColors.white,
                       boxShadow: const [
@@ -70,11 +69,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                           Column(
                             children: [
                               SizedBox(height: height / 80),
-                              const AppCircleAvatar(
-                                radius: 24,
+                              AppCircleAvatar(
+                                radius: height / 30,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
-                                child: Icon(Icons.restore),
+                                child: const Icon(Icons.restore),
                               ),
                             ],
                           ),
@@ -115,8 +114,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 height: height / 80,
                               ),
                               Container(
-                                height: 28,
-                                width: 82,
+                                height: height / 25,
+                                width: width / 4.5,
                                 decoration: BoxDecoration(
                                   color: AppColors.buttonRed,
                                   borderRadius: BorderRadius.circular(100),
@@ -176,11 +175,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                           Column(
                             children: [
                               SizedBox(height: height / 80),
-                              const AppCircleAvatar(
-                                radius: 24,
+                              AppCircleAvatar(
+                                radius: height / 30,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
-                                child: Icon(Icons.restore),
+                                child: const Icon(Icons.restore),
                               ),
                             ],
                           ),
@@ -209,7 +208,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
                                   SizedBox(width: width / 50),
-                                  const Text("Pokhara-16, Lamachaur, "),
+                                  const Text("Pokhara-16, Lamachaur,"),
                                 ],
                               ),
                             ],
@@ -220,8 +219,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 height: height / 80,
                               ),
                               Container(
-                                height: 28,
-                                width: 82,
+                                height: height / 25,
+                                width: width / 4.5,
                                 decoration: BoxDecoration(
                                   color: index == 0 ? AppColors.buttonGreen : AppColors.buttonRed,
                                   borderRadius: BorderRadius.circular(100),

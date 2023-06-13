@@ -87,9 +87,10 @@ class _LogInScreenState extends State<LogInScreen> {
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         backgroundColor: AppColors.transparent,
         elevation: 0,
-        toolbarHeight: 80,
+        toolbarHeight: 50,
         leading: null,
         title: const Text(
           AppStrings.appBarText,
@@ -191,13 +192,13 @@ class _LogInScreenState extends State<LogInScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: height / 20),
+                  SizedBox(height: height / 25),
                   const Text(
                     AppStrings.textOne,
                     style: TextStyle(color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: height / 20),
+                  SizedBox(height: height / 25),
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -224,7 +225,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     },
                   ),
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Checkbox(
                         checkColor: AppColors.white,
@@ -240,32 +241,38 @@ class _LogInScreenState extends State<LogInScreen> {
                           setState(() {});
                         },
                       ),
-                      RichText(
-                        text: TextSpan(
-                          text: AppStrings.continuing,
-                          style: const TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w400, fontSize: 16),
-                          children: [
-                            TextSpan(
-                              text: AppStrings.terms,
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: AppColors.materialColor,
-                              ),
+                      Expanded(
+                        child: RichText(
+                          text: TextSpan(
+                            text: AppStrings.continuing,
+                            style: const TextStyle(
+                              color: AppColors.textColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
                             ),
-                            const TextSpan(
-                              text: AppStrings.readOur,
-                              style: TextStyle(
-                                color: AppColors.textColor,
+                            children: [
+                              TextSpan(
+                                text: AppStrings.terms,
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: AppColors.materialColor,
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: AppStrings.privacyPolicy,
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: AppColors.materialColor,
+                              const TextSpan(
+                                text: AppStrings.readOur,
+                                style: TextStyle(
+                                  color: AppColors.textColor,
+                                ),
                               ),
-                            ),
-                          ],
+                              TextSpan(
+                                text: AppStrings.privacyPolicy,
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: AppColors.materialColor,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -286,7 +293,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                 (value) => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => OtpLogInScreen(),
+                                    builder: (context) => const OtpLogInScreen(),
                                   ),
                                 ),
                               )

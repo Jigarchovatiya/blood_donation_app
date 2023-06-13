@@ -1,5 +1,6 @@
 import 'package:blood_donation_app/res/common/app_button.dart';
 import 'package:blood_donation_app/res/common/app_text_field.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -95,6 +96,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         backgroundColor: AppColors.transparent,
         elevation: 0,
         toolbarHeight: 80,
@@ -232,12 +234,12 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const AppTextField(
-                          width: 164,
+                        AppTextField(
+                          width: width / 2.4,
                           hintText: "20",
                         ),
                         AppTextField(
-                          width: 164,
+                          width: width / 2.4,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -280,7 +282,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppTextField(
-                          width: 164,
+                          width: width / 2.4,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -303,8 +305,8 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                             ),
                           ),
                         ),
-                        const AppTextField(
-                          width: 164,
+                        AppTextField(
+                          width: width / 2.4,
                           hintText: "60",
                         ),
                       ],
@@ -343,14 +345,16 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: const Size(345, 54),
+                fixedSize: Size(width / 1.14, height / 13),
                 buttonText: AppStrings.continueButton,
-                side: BorderSide(style: BorderStyle.none),
+                side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {
                   addUser();
+                  Navigator.pushNamed(context, RoutesName.createAccountTwo);
                   debugPrint("user --> $person");
                 },
               ),
+              SizedBox(height: height / 20),
             ],
           ),
         ),

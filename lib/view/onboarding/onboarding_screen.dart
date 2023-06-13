@@ -38,6 +38,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     final PageController pageController = PageController(initialPage: 0);
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       body: SafeArea(
@@ -70,7 +71,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
                 Container(
                   color: AppColors.homeBg,
-                  height: height / 1.50,
+                  height: height / 1.45,
                   child: PageView(
                     onPageChanged: (value) {
                       selectedIndex = value;
@@ -84,7 +85,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             heightFactor: 1.00,
                             child: Image.asset(
                               value["image"],
-                              height: 350,
+                              height: height / 2.45,
                             ),
                           ),
                           SizedBox(
@@ -112,14 +113,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: height / 20,
+                        height: height / 35,
                       ),
                       AppButton(
                         borderRadius: BorderRadius.circular(30),
                         backgroundColor: AppColors.materialColor,
                         foregroundColor: AppColors.white,
-                        side: BorderSide(style: BorderStyle.none),
-                        fixedSize: Size(345, 54),
+                        side: const BorderSide(style: BorderStyle.none),
+                        fixedSize: Size(width / 1.14, height / 13),
                         onPressed: () {
                           if (selectedIndex == 2) {
                             Navigator.pushNamed(context, RoutesName.logInScreen);
