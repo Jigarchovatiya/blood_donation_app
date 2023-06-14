@@ -10,6 +10,7 @@ import 'package:otp_text_field/style.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
+import '../../utils/routes/routes_name.dart';
 
 class OtpLogInScreen extends StatefulWidget {
   const OtpLogInScreen({Key? key}) : super(key: key);
@@ -139,13 +140,13 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: AppStrings.enterOtp,
                         style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w500, fontSize: 18),
                       ),
                       TextSpan(
-                        text: "${mobile.text}",
-                        style: TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w800, fontSize: 18),
+                        text: mobile.text,
+                        style: const TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w800, fontSize: 18),
                       ),
                       TextSpan(
                         text: AppStrings.editNumber,
@@ -177,7 +178,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: AppStrings.dintReceive,
                         style: TextStyle(
                           color: AppColors.textColor,
@@ -190,7 +191,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                           ..onTap = () => Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LogInScreen(),
+                                  builder: (context) => const LogInScreen(),
                                 ),
                               ),
                         text: AppStrings.resendOtp,
@@ -210,13 +211,13 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
                   fixedSize: const Size(345, 54),
-                  side: BorderSide(style: BorderStyle.none),
+                  side: const BorderSide(style: BorderStyle.none),
                   onPressed: () {
-                    // Navigator.pushNamed(context, RoutesName.createAccountOne);
+                    Navigator.pushNamed(context, RoutesName.createAccountOne);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CreateAccountOne(),
+                        builder: (context) => const CreateAccountOne(),
                       ),
                     );
                   },

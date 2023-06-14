@@ -62,7 +62,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                     SizedBox(
                       width: width / 1.41,
                       height: 8,
-                      child: ClipRRect(
+                      child: const ClipRRect(
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
                         ),
