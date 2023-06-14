@@ -71,7 +71,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                       Image.asset(AppAssets.donateAndSaveLife, height: height / 6),
                       const SizedBox(width: 10),
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
@@ -112,7 +112,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             borderRadius: BorderRadius.circular(30),
                             backgroundColor: AppColors.materialColor,
                             foregroundColor: AppColors.white,
-                            fixedSize: Size(width / 2, height / 100),
+                            fixedSize: Size(width / 2.2, height / 100),
                             buttonText: AppStrings.donate,
                             side: const BorderSide(style: BorderStyle.none),
                             onPressed: () {},

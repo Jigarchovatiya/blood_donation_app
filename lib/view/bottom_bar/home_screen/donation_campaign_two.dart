@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../utils/routes/routes_name.dart';
 
 class DonationCampaignTwo extends StatefulWidget {
   const DonationCampaignTwo({super.key});
@@ -57,8 +59,8 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      width: 290,
+                    SizedBox(
+                      width: width / 1.41,
                       height: 8,
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(
@@ -95,7 +97,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                   height: height / 50,
                 ),
                 Wrap(
-                  spacing: 10,
+                  spacing: width / 20,
                   children: List.generate(
                     timeList.length,
                     (int index) {
@@ -117,6 +119,32 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                       );
                     },
                   ).toList(),
+                ),
+                SizedBox(height: height / 2.5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      child: const Text(
+                        AppStrings.back,
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.textColor),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    AppButton(
+                      borderRadius: BorderRadius.circular(8),
+                      foregroundColor: AppColors.white,
+                      side: const BorderSide(style: BorderStyle.none),
+                      backgroundColor: AppColors.materialColor,
+                      fixedSize: const Size(80, 40),
+                      onPressed: () {
+                        Navigator.pushNamed(context, RoutesName.donationCampaignTwo);
+                      },
+                      buttonText: AppStrings.next,
+                    ),
+                  ],
                 ),
               ],
             ),

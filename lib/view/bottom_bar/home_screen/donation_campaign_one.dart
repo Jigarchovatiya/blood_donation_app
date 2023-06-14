@@ -17,7 +17,6 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
   TextEditingController name = TextEditingController();
   TextEditingController age = TextEditingController();
   TextEditingController weight = TextEditingController();
-  TextEditingController lastDonatedOn = TextEditingController();
   TextEditingController additionalInformation = TextEditingController();
   String bloodGroupData = "group 1";
   List bloodGroupList = [
@@ -65,19 +64,21 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
       "data": "No",
     },
   ];
-  // var myFormat = DateFormat('dd-MM-yyyy');
-  DateTime dateTime = DateTime.now();
-  void _showDatePicker() {
-    showDatePicker(
+  DateTime? selectedDate;
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2025),
-    ).then((value) {
+      firstDate: DateTime(2010),
+      lastDate: DateTime(2030),
+    );
+
+    if (picked != null && picked != selectedDate) {
       setState(() {
-        dateTime = value!;
+        selectedDate = picked;
       });
-    });
+    }
   }
 
   @override
@@ -238,13 +239,18 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                           width: width / 2.4,
                           hintText: "60",
                         ),
-                        AppTextField(
-                          controller: lastDonatedOn,
-                          width: width / 2.4,
-                          hintText: AppStrings.campaignDt,
-                          onTap: () {
-                            _showDatePicker;
-                          },
+                        GestureDetector(
+                          onTap: () => _selectDate(context),
+                          child: AbsorbPointer(
+                            child: AppTextField(
+                              width: width / 2.4,
+                              readOnly: true,
+                              hintText: AppStrings.campaignDt,
+                              controller: TextEditingController(
+                                text: selectedDate != null ? '${selectedDate!.year}-${selectedDate!.month}-${selectedDate!.day}' : '',
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -305,13 +311,12 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                     TextButton(
                       child: const Text(
                         AppStrings.clearForm,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.textColor),
                       ),
                       onPressed: () {
                         name.clear();
                         age.clear();
                         weight.clear();
-                        lastDonatedOn.clear();
                         additionalInformation.clear();
                       },
                     ),

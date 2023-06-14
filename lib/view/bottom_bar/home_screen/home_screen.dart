@@ -89,8 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: height / 2.6,
               decoration: const BoxDecoration(color: AppColors.white),
+              height: height / 3,
               child: Column(
                 children: [
                   Row(
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: height / 4,
+                    height: height / 4.70,
                     width: width / 1,
                     child: PageView(
                       onPageChanged: (value) {
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       borderRadius: BorderRadius.circular(30),
                                       backgroundColor: AppColors.materialColor,
                                       foregroundColor: AppColors.white,
-                                      fixedSize: Size(width / 2, height / 30),
+                                      fixedSize: Size(width / 2.20, height / 50),
                                       buttonText: AppStrings.donate,
                                       side: const BorderSide(style: BorderStyle.none),
                                       onPressed: () {
