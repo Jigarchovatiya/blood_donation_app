@@ -13,13 +13,15 @@ class DonationCampaignTwo extends StatefulWidget {
 }
 
 class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
+  List<bool> isSelectedList = [false, false, false, false, false];
+  List timeList = ["10:00 am", "11:30 am", "1:00 pm", "2:30 pm", "4:00 pm"];
+
+  String? selectedTime = "";
+
   @override
   Widget build(BuildContext context) {
-    List<bool> isSelectedList = [false, false, false, false, false];
-    List timeList = ["10:00 am", "11:30 am", "1:00 pm", "2:30 pm", "4:00 pm"];
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    String? selectedTime = "";
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -102,18 +104,12 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                     timeList.length,
                     (int index) {
                       return ChoiceChip(
-                        label: Text(
-                          timeList[index],
-                        ),
+                        label: Text(timeList[index]),
                         disabledColor: AppColors.textColor,
                         selected: isSelectedList[index],
                         onSelected: (bool selected) {
                           setState(() {
-                            if (selected) {
-                              selectedTime = timeList[index];
-                            } else {
-                              selectedTime = null;
-                            }
+                            isSelectedList[index] = selected;
                           });
                         },
                       );

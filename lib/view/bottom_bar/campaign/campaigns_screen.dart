@@ -28,27 +28,26 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
         centerTitle: true,
         title: const Text(AppStrings.campaigns),
       ),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(10),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                AppStrings.donorsNearYou,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  AppStrings.donorsNearYou,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
+            ListView.builder(
               itemCount: 5,
-              scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              physics: const BouncingScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return Container(
                   height: height / 5,
@@ -124,8 +123,8 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "inter",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // primaryColor: Colors.red,
         useMaterial3: true,
       ),
       // home: const DonationCampaignOne(),

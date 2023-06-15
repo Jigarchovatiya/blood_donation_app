@@ -150,7 +150,12 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                       ),
                       TextSpan(
                         text: AppStrings.editNumber,
-                        style: TextStyle(decoration: TextDecoration.underline, color: AppColors.materialColor, fontWeight: FontWeight.w500, fontSize: 18),
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: AppColors.materialColor,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                        ),
                       ),
                     ],
                   ),
