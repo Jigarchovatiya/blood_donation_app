@@ -93,8 +93,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                   height: height / 80,
                 ),
                 Container(
-                  height: 420,
-                  width: 345,
+                  height: height / 1.90,
                   decoration: BoxDecoration(
                     color: AppColors.textFillColor,
                     borderRadius: BorderRadius.circular(15),
@@ -264,7 +263,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                       foregroundColor: AppColors.white,
                       side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
-                      fixedSize: const Size(100, 40),
+                      fixedSize: Size(width / 4, height / 50),
                       onPressed: () {
                         Navigator.pushNamed(context, RoutesName.donationCampaignFour);
                       },

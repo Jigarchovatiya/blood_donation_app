@@ -17,7 +17,7 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -38,14 +38,14 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                   height: height / 10,
                 ),
                 Container(
-                  height: 440,
-                  width: 345,
+                  height: height / 1.80,
+                  width: width / 1.10,
                   decoration: BoxDecoration(
                     color: AppColors.textFillColor,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     child: Column(
                       children: [
                         const Row(
@@ -64,16 +64,16 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                         ),
                         Image.asset(
                           AppAssets.verified,
-                          height: 95,
+                          height: height / 6,
                         ),
                         SizedBox(
                           height: height / 20,
                         ),
-                        const Text(
+                        Text(
                           AppStrings.registeredSuccessfully,
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                         ),
-                        const Spacer(),
+                        Spacer(),
                         TextButton(
                           onPressed: () {
                             widget.onTap!("Home");
@@ -95,8 +95,8 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.white,
                   foregroundColor: AppColors.materialColor,
-                  side: BorderSide(width: 1, color: AppColors.materialColor),
-                  fixedSize: const Size(345, 54),
+                  side: BorderSide(width: width / 300, color: AppColors.materialColor),
+                  fixedSize: Size(width / 1.1, height / 15),
                   onPressed: () {},
                   buttonText: AppStrings.downloadPdf,
                 ),

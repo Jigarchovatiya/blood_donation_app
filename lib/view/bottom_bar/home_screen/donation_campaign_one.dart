@@ -325,7 +325,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                       foregroundColor: AppColors.white,
                       side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
-                      fixedSize: const Size(80, 40),
+                      fixedSize: Size(width / 5, height / 50),
                       onPressed: () {
                         Navigator.pushNamed(context, RoutesName.donationCampaignTwo);
                       },
