@@ -99,24 +99,38 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                   height: height / 50,
                 ),
                 Wrap(
-                  spacing: width / 20,
-                  children: List.generate(
-                    timeList.length,
-                    (int index) {
-                      return ChoiceChip(
-                        label: Text(timeList[index]),
-                        disabledColor: AppColors.textColor,
-                        selected: isSelectedList[index],
-                        onSelected: (bool selected) {
-                          setState(() {
-                            isSelectedList[index] = selected;
-                          });
-                        },
-                      );
-                    },
-                  ).toList(),
+                  spacing: 20,
+                  children: List<Widget>.generate(timeList.length, (int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (selectedTime == timeList[index]) {
+                            selectedTime = null; // Deselect the chip if it's already selected
+                          } else {
+                            selectedTime = timeList[index]; // Select the chip
+                          }
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: selectedTime == timeList[index] ? AppColors.dividerColor : AppColors.buttonBg,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            timeList[index],
+                            style: const TextStyle(
+                              color: AppColors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
                 ),
-                SizedBox(height: height / 2.5),
+                SizedBox(height: height / 2.2),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -136,7 +150,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                       backgroundColor: AppColors.materialColor,
                       fixedSize: const Size(80, 40),
                       onPressed: () {
-                        Navigator.pushNamed(context, RoutesName.donationCampaignTwo);
+                        Navigator.pushNamed(context, RoutesName.donationCampaignThree);
                       },
                       buttonText: AppStrings.next,
                     ),

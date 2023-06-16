@@ -5,6 +5,7 @@ import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../utils/routes/routes_name.dart';
 
 class CampaignsScreen extends StatefulWidget {
   final Function(String)? onTap;
@@ -114,7 +115,9 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             fixedSize: Size(width / 2.2, height / 100),
                             buttonText: AppStrings.donate,
                             side: const BorderSide(style: BorderStyle.none),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, RoutesName.donationCampaignOne);
+                            },
                           ),
                         ],
                       ),

@@ -1,3 +1,4 @@
+import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:blood_donation_app/utils/routes/routes.dart';
 import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "inter",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        // primaryColor: Colors.red,
-        useMaterial3: true,
+        primaryColor: AppColors.materialColor,
+        useMaterial3: false,
       ),
       // home: const DonationCampaignOne(),
       routes: appRoutes,

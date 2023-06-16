@@ -89,8 +89,9 @@ class _LogInScreenState extends State<LogInScreen> {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: AppColors.transparent,
+        foregroundColor: AppColors.black,
         elevation: 0,
-        toolbarHeight: 50,
+        toolbarHeight: 80,
         leading: null,
         title: const Text(
           AppStrings.appBarText,
@@ -195,7 +196,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   SizedBox(height: height / 25),
                   const Text(
                     AppStrings.textOne,
-                    style: TextStyle(color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(color: AppColors.textColor, fontSize: 18, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: height / 25),
@@ -338,7 +339,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height / 50),
+                  SizedBox(height: height / 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

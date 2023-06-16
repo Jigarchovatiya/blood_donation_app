@@ -20,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   bool isSelected = false;
+  String? bloodGroup = "";
   List<Map<String, dynamic>> donationCampaignsList = [
     {
       "image": AppAssets.pageOne,
@@ -260,22 +261,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: profileImageList.length,
                 physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) => InkWell(
-                  onTap: () {},
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (bloodGroup == bloodGroupList[index]) {
+                        bloodGroup = null; // Deselect the chip if it's already selected
+                      } else {
+                        bloodGroup = bloodGroupList[index]; // Select the chip
+                      }
+                    });
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: width / 20,
-                      ),
                       decoration: BoxDecoration(
-                        color: isSelected == true ? AppColors.materialColor : AppColors.buttonBg,
+                        color: bloodGroup == bloodGroupList[index] ? AppColors.materialColor : AppColors.buttonBg,
                         borderRadius: BorderRadius.circular(32),
                       ),
                       child: Center(
-                        child: Text(
-                          bloodGroupList[index],
-                          style: TextStyle(color: isSelected == true ? AppColors.white : AppColors.textColor, fontSize: 16, fontWeight: FontWeight.w500),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                          child: Text(
+                            bloodGroupList[index],
+                            style: TextStyle(
+                              color: bloodGroup == bloodGroupList[index] ? AppColors.white : AppColors.textColor,
+                            ),
+                          ),
                         ),
                       ),
                     ),

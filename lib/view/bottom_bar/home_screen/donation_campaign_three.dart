@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../utils/routes/routes_name.dart';
 
 class DonationCampaignThree extends StatefulWidget {
   const DonationCampaignThree({super.key});
@@ -55,10 +56,10 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      width: 290,
-                      height: 8,
-                      child: ClipRRect(
+                    SizedBox(
+                      width: width / 1.41,
+                      height: height / 100,
+                      child: const ClipRRect(
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
                         ),
@@ -249,9 +250,14 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      AppStrings.back,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        AppStrings.back,
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.textColor),
+                      ),
                     ),
                     AppButton(
                       borderRadius: BorderRadius.circular(8),
@@ -259,7 +265,9 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                       side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
                       fixedSize: const Size(100, 40),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RoutesName.donationCampaignFour);
+                      },
                       buttonText: AppStrings.submit,
                     ),
                   ],
