@@ -9,9 +9,9 @@ import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_strings.dart';
 
 class HomeScreen extends StatefulWidget {
-  final Function(String)? onTap;
+  final Function(String)? onTab;
 
-  const HomeScreen({Key? key, this.onTap}) : super(key: key);
+  const HomeScreen({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          widget.onTap!("Campaign");
+                          widget.onTab!("Campaign");
                         },
                         child: Text(
                           AppStrings.seeAll,
@@ -240,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      widget.onTap!("Donor");
+                      widget.onTab!("Donor");
                     },
                     child: Text(
                       AppStrings.seeAll,

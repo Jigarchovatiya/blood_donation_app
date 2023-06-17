@@ -6,8 +6,9 @@ import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
 class DonationCampaignFour extends StatefulWidget {
-  final Function(String)? onTap;
-  const DonationCampaignFour({super.key, this.onTap});
+  final Function(String)? onTab;
+
+  const DonationCampaignFour({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<DonationCampaignFour> createState() => _DonationCampaignFourState();
@@ -45,7 +46,7 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
                         const Row(
@@ -69,14 +70,14 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                         SizedBox(
                           height: height / 20,
                         ),
-                        Text(
+                        const Text(
                           AppStrings.registeredSuccessfully,
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         TextButton(
                           onPressed: () {
-                            widget.onTap!("Home");
+                            widget.onTab!("Home");
                           },
                           child: const Text(
                             AppStrings.goToHomePage,

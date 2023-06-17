@@ -7,9 +7,9 @@ import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
 class DonorScreen extends StatefulWidget {
-  final Function(String)? onTap;
+  final Function(String)? onTab;
 
-  const DonorScreen({Key? key, this.onTap}) : super(key: key);
+  const DonorScreen({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<DonorScreen> createState() => _DonorScreenState();
@@ -142,13 +142,11 @@ class _DonorScreenState extends State<DonorScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: ListView.separated(
-
                     separatorBuilder: (context, index) => const SizedBox(height: 10),
                     shrinkWrap: true,
                     itemCount: 5,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) {
-
                       return Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(

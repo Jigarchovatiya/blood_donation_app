@@ -38,9 +38,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   void initState() {
     screenList = [
-      HomeScreen(onTap: onScreenChange),
-      DonorScreen(onTap: onScreenChange),
-      CampaignsScreen(onTap: onScreenChange),
+      HomeScreen(onTab: onScreenChange),
+      DonorScreen(onTab: onScreenChange),
+      CampaignsScreen(onTab: onScreenChange),
       const HistoryScreen(),
       const ProfileScreen(),
     ];

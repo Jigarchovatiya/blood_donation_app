@@ -8,9 +8,9 @@ import '../../../res/constants/app_strings.dart';
 import '../../../utils/routes/routes_name.dart';
 
 class CampaignsScreen extends StatefulWidget {
-  final Function(String)? onTap;
+  final Function(String)? onTab;
 
-  const CampaignsScreen({Key? key, this.onTap}) : super(key: key);
+  const CampaignsScreen({Key? key, this.onTab}) : super(key: key);
 
   @override
   State<CampaignsScreen> createState() => _CampaignsScreenState();
