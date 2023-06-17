@@ -283,7 +283,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     borderRadius: BorderRadius.circular(30),
                     backgroundColor: AppColors.materialColor,
                     foregroundColor: AppColors.white,
-                    fixedSize: const Size(345, 54),
+                    fixedSize: Size(width / 1.14, height / 15),
                     side: const BorderSide(style: BorderStyle.none),
                     buttonText: AppStrings.continueButton,
                     onPressed: () {

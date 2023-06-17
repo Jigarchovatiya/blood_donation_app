@@ -1,5 +1,6 @@
 import 'package:blood_donation_app/res/common/app_button.dart';
 import 'package:blood_donation_app/res/constants/app_assets.dart';
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../../res/constants/app_colors.dart';
@@ -16,7 +17,7 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -41,13 +42,16 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: height / 50),
-            Image.asset(AppAssets.profileImage, height: 128),
+            Image.asset(AppAssets.profileImage, height: height / 5.5),
             SizedBox(height: height / 80),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   "Aasma Shrestha",
+                ),
+                SizedBox(
+                  width: width / 80,
                 ),
                 Icon(
                   Icons.verified,
@@ -59,51 +63,53 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
               "aasma@gmail.com",
             ),
             SizedBox(height: height / 50),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      "20",
-                    ),
-                    Text(
-                      "Donation",
-                    ),
-                  ],
-                ),
-                VerticalDivider(
-                  color: AppColors.dividerGray,
-                  thickness: 2,
-                  indent: 10,
-                  endIndent: 10,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "20",
-                    ),
-                    Text(
-                      "Donation",
-                    ),
-                  ],
-                ),
-                VerticalDivider(
-                  color: AppColors.dividerGray,
-                  thickness: 1,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "20",
-                    ),
-                    Text(
-                      "Donation",
-                    ),
-                  ],
-                ),
-              ],
+            SizedBox(
+              height: height / 22,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        "20",
+                      ),
+                      Text(
+                        "Donation",
+                      ),
+                    ],
+                  ),
+                  VerticalDivider(
+                    color: AppColors.dividerGray,
+                    thickness: 1,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "20",
+                      ),
+                      Text(
+                        "Donation",
+                      ),
+                    ],
+                  ),
+                  VerticalDivider(
+                    color: AppColors.dividerGray,
+                    thickness: 1,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "20",
+                      ),
+                      Text(
+                        "Donation",
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
+            SizedBox(height: height / 40),
             Padding(
               padding: const EdgeInsets.all(20),
               child: ListView.builder(
@@ -132,8 +138,6 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
                       ),
                       const Divider(
                         thickness: 1,
-                        endIndent: 30,
-                        indent: 30,
                       ),
                       SizedBox(
                         height: height / 70,
@@ -151,8 +155,10 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
               backgroundColor: AppColors.materialColor,
               foregroundColor: AppColors.white,
               side: BorderSide.none,
-              fixedSize: const Size(345, 54),
-              onPressed: () {},
+              fixedSize: Size(width / 1.14, height / 15),
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesName.contactScreen);
+              },
               buttonText: AppStrings.call,
             ),
           ],

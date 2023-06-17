@@ -24,7 +24,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -215,7 +215,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
-                  fixedSize: const Size(345, 54),
+                  fixedSize: Size(width / 1.14, height / 15),
                   side: const BorderSide(style: BorderStyle.none),
                   onPressed: () {
                     Navigator.pushNamed(context, RoutesName.createAccountOne);

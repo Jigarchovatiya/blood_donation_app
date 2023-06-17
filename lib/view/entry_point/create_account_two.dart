@@ -151,7 +151,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: Size(width / 1.14, height / 13),
+                fixedSize: Size(width / 1.14, height / 15),
                 side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {},
                 buttonText: AppStrings.goToHomePage,

@@ -12,6 +12,7 @@ class RoutesName {
   static const String donationCampaignFour = "/donationCampaignFour";
   static const String donor = "/donor";
   static const String donorDetail = "/donorDetail";
+  static const String contactScreen = "/contactScreen";
   static const String campaign = "/campaign";
   static const String history = "/history";
   static const String profile = "/profile";

@@ -1,3 +1,4 @@
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,6 +17,7 @@ class DonorScreen extends StatefulWidget {
 
 class _DonorScreenState extends State<DonorScreen> {
   bool isSelected = false;
+  String? bloodGroup = "";
   List<Map<String, dynamic>> donationCampaignsList = [
     {
       "image": AppAssets.pageOne,
@@ -97,22 +99,35 @@ class _DonorScreenState extends State<DonorScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: profileImageList.length,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => InkWell(
-                    onTap: () {},
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (bloodGroup == bloodGroupList[index]) {
+                          bloodGroup = null; // Deselect the chip if it's already selected
+                        } else {
+                          bloodGroup = bloodGroupList[index]; // Select the chip
+                        }
+                      });
+                    },
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: height / 100, vertical: width / 50),
+                      padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
                       child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: width / 20,
-                        ),
+                        padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
                         decoration: BoxDecoration(
-                          color: isSelected == true ? AppColors.materialColor : AppColors.buttonBg,
+                          color: bloodGroup == bloodGroupList[index] ? AppColors.materialColor : AppColors.buttonBg,
                           borderRadius: BorderRadius.circular(32),
                         ),
                         child: Center(
-                          child: Text(
-                            bloodGroupList[index],
-                            style: TextStyle(color: isSelected == true ? AppColors.white : AppColors.textColor, fontSize: 16, fontWeight: FontWeight.w500),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                            child: Text(
+                              bloodGroupList[index],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: bloodGroup == bloodGroupList[index] ? AppColors.white : AppColors.textColor,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -120,86 +135,93 @@ class _DonorScreenState extends State<DonorScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: ListView.separated(
-                  separatorBuilder: (context, index) => const SizedBox(height: 10),
-                  shrinkWrap: true,
-                  itemCount: 5,
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: AppColors.textFillColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(profileImageList[index], height: 78),
-                          SizedBox(width: width / 30),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                donorsNameList[index],
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesName.donorDetail);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: ListView.separated(
+
+                    separatorBuilder: (context, index) => const SizedBox(height: 10),
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+
+                      return Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: AppColors.textFillColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset(profileImageList[index], height: 78),
+                            SizedBox(width: width / 30),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  donorsNameList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(height: height / 80),
-                              Row(
-                                children: [
-                                  SvgPicture.asset(AppAssets.mapGray),
-                                  SizedBox(width: width / 50),
-                                  const Text(
-                                    "Kadaghari, Kathmandu",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
+                                SizedBox(height: height / 80),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(AppAssets.mapGray),
+                                    SizedBox(width: width / 50),
+                                    const Text(
+                                      "Kadaghari, Kathmandu",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: height / 80),
-                              Row(
-                                children: [
-                                  SvgPicture.asset(AppAssets.call),
-                                  SizedBox(width: width / 50),
-                                  const Text(
-                                    "+977 98654321987",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
+                                  ],
+                                ),
+                                SizedBox(height: height / 80),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(AppAssets.call),
+                                    SizedBox(width: width / 50),
+                                    const Text(
+                                      "+977 98654321987",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                bloodGroupList[index],
-                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
-                              ),
-                              SizedBox(height: height / 50),
-                              CircleAvatar(
-                                radius: 18,
-                                foregroundColor: Colors.white,
-                                backgroundColor: AppColors.materialColor,
-                                child: SvgPicture.asset(AppAssets.chat),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  bloodGroupList[index],
+                                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
+                                ),
+                                SizedBox(height: height / 50),
+                                CircleAvatar(
+                                  radius: 18,
+                                  foregroundColor: Colors.white,
+                                  backgroundColor: AppColors.materialColor,
+                                  child: SvgPicture.asset(AppAssets.chat),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],

@@ -23,6 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       {"icon": const Icon(Icons.logout, color: AppColors.red), "title": const Text("Log Out")},
     ];
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       // appBar: AppBar(
@@ -65,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Image.asset(
                       AppAssets.profileImage,
-                      height: 128,
+                      height: width / 3.5,
                     ),
                     Positioned(
                       bottom: 0,
@@ -101,6 +102,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "Aasma Shrestha",
                       style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                     ),
+                    SizedBox(
+                      width: width / 80,
+                    ),
                     Icon(
                       Icons.verified,
                       color: AppColors.materialColor,
@@ -112,54 +116,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: TextStyle(color: AppColors.textColor),
                 ),
                 SizedBox(height: height / 40),
-                const SizedBox(
-                  height: 60,
-                  child: Row(
+                SizedBox(
+                  height: height / 22,
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         children: [
                           Text(
                             "20",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                           ),
                           Text(
                             "Donation",
-                            style: TextStyle(color: AppColors.textColor),
                           ),
                         ],
                       ),
                       VerticalDivider(
                         color: AppColors.dividerGray,
                         thickness: 1,
-                        endIndent: 470,
                       ),
                       Column(
                         children: [
                           Text(
                             "B+",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                           ),
                           Text(
                             "Blood Group",
-                            style: TextStyle(color: AppColors.textColor),
                           ),
                         ],
                       ),
                       VerticalDivider(
                         color: AppColors.dividerGray,
                         thickness: 1,
-                        endIndent: 470,
                       ),
                       Column(
                         children: [
                           Text(
                             "5",
-                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                           ),
                           Text(
                             "Campaigns",
-                            style: TextStyle(color: AppColors.textColor),
                           ),
                         ],
                       ),

@@ -252,10 +252,14 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                               value: bloodGroupData,
                               isExpanded: true,
                               items: bloodGroupList
-                                  .map((value) => DropdownMenuItem(
-                                        value: value['value'],
-                                        child: Text(value['data']),
-                                      ))
+                                  .map(
+                                    (value) => DropdownMenuItem(
+                                      value: value['value'],
+                                      child: Text(
+                                        value['data'],
+                                      ),
+                                    ),
+                                  )
                                   .toList(),
                               onChanged: (value) {
                                 debugPrint(value.toString());
@@ -348,7 +352,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: Size(width / 1.14, height / 13),
+                fixedSize: Size(width / 1.14, height / 15),
                 buttonText: AppStrings.continueButton,
                 side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {

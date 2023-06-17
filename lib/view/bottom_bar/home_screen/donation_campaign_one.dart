@@ -302,7 +302,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                   ],
                 ),
               ),
-              SizedBox(height: height / 50),
+              SizedBox(height: height / 20),
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(

@@ -120,7 +120,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         backgroundColor: AppColors.materialColor,
                         foregroundColor: AppColors.white,
                         side: const BorderSide(style: BorderStyle.none),
-                        fixedSize: Size(width / 1.14, height / 13),
+                        fixedSize: Size(width / 1.14, height / 15),
                         onPressed: () {
                           if (selectedIndex == 2) {
                             Navigator.pushNamed(context, RoutesName.logInScreen);

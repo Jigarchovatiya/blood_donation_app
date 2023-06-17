@@ -1,6 +1,7 @@
 import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:blood_donation_app/view/bottom_bar/bottom_bar_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/campaign/campaigns_screen.dart';
+import 'package:blood_donation_app/view/bottom_bar/donnors/contact_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/donnors/donors_detail_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/donnors/donors_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/history/history_screen.dart';
@@ -31,6 +32,7 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.donationCampaignFour: (context) => const DonationCampaignFour(),
   RoutesName.donor: (context) => const DonorScreen(),
   RoutesName.donorDetail: (context) => const DonorsDetailScreen(),
+  RoutesName.contactScreen: (context) => const ContactScreen(),
   RoutesName.campaign: (context) => const CampaignsScreen(),
   RoutesName.history: (context) => const HistoryScreen(),
   RoutesName.profile: (context) => const ProfileScreen(),

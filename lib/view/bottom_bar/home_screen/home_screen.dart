@@ -272,8 +272,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     });
                   },
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
                     child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
                       decoration: BoxDecoration(
                         color: bloodGroup == bloodGroupList[index] ? AppColors.materialColor : AppColors.buttonBg,
                         borderRadius: BorderRadius.circular(32),
@@ -284,6 +285,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             bloodGroupList[index],
                             style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
                               color: bloodGroup == bloodGroupList[index] ? AppColors.white : AppColors.textColor,
                             ),
                           ),
