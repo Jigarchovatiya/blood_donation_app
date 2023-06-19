@@ -1,3 +1,4 @@
+import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../../res/common/app_button.dart';
@@ -6,9 +7,7 @@ import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
 class DonationCampaignFour extends StatefulWidget {
-  final Function(String)? onTab;
-
-  const DonationCampaignFour({Key? key, this.onTab}) : super(key: key);
+  const DonationCampaignFour({Key? key}) : super(key: key);
 
   @override
   State<DonationCampaignFour> createState() => _DonationCampaignFourState();
@@ -77,7 +76,7 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                         const Spacer(),
                         TextButton(
                           onPressed: () {
-                            widget.onTab!("Home");
+                            Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
                           },
                           child: const Text(
                             AppStrings.goToHomePage,

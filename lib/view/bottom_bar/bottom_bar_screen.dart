@@ -25,9 +25,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   onScreenChange(String? value) {
     debugPrint(value);
-    if (value == "Home") {
-      selectedIndex = 0;
-    } else if (value == "Donor") {
+     if (value == "Donor") {
       selectedIndex = 1;
     } else if (value == "Campaign") {
       selectedIndex = 2;
