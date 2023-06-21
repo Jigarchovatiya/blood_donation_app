@@ -6,7 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../data/model/donor_model.dart';
 import '../../res/common/app_button.dart';
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

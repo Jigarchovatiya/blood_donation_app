@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 
 class CreateAccountTwo extends StatefulWidget {
   const CreateAccountTwo({Key? key}) : super(key: key);

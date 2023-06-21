@@ -6,7 +6,7 @@ import '../../../data/model/donor_model.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
-import '../../../res/global/media_quary.dart';
+import '../../../res/global/media_query.dart';
 
 class DonorScreen extends StatefulWidget {
   final Function(String)? onTab;

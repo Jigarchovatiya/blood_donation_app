@@ -9,7 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 import '../../utils/routes/routes_name.dart';
 import 'otp_log_in_screen.dart';
 

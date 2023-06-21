@@ -4,7 +4,7 @@ import 'package:blood_donation_app/res/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/model/profile_model.dart';
-import '../../../res/global/media_quary.dart';
+import '../../../res/global/media_query.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

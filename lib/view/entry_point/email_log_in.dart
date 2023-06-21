@@ -9,7 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 
 class EmailLogInScreen extends StatefulWidget {
   const EmailLogInScreen({Key? key}) : super(key: key);

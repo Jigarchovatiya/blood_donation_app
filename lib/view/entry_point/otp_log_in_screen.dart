@@ -10,7 +10,7 @@ import 'package:otp_text_field/style.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 import '../../utils/routes/routes_name.dart';
 
 class OtpLogInScreen extends StatefulWidget {

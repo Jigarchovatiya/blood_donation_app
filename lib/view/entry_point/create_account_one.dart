@@ -8,7 +8,7 @@ import '../../data/model/campaign_one_model.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
-import '../../res/global/media_quary.dart';
+import '../../res/global/media_query.dart';
 
 class CreateAccountOne extends StatefulWidget {
   final Function(String)? onTab;

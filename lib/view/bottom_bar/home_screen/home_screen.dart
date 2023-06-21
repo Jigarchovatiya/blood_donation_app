@@ -8,7 +8,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_strings.dart';
-import '../../../res/global/media_quary.dart';
+import '../../../res/global/media_query.dart';
 
 class HomeScreen extends StatefulWidget {
   final Function(String)? onTab;

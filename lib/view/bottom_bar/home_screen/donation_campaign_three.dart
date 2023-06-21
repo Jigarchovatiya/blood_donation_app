@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
-import '../../../res/global/media_quary.dart';
+import '../../../res/global/media_query.dart';
 import '../../../utils/routes/routes_name.dart';
 
 class DonationCampaignThree extends StatefulWidget {
