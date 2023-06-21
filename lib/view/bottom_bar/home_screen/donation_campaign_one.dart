@@ -47,7 +47,6 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,
         elevation: 0,
-        toolbarHeight: 80,
         leading: TextButton(
           onPressed: () {
             Navigator.pop(context);

@@ -25,7 +25,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   onScreenChange(String? value) {
     debugPrint(value);
-     if (value == "Donor") {
+    if (value == "Donor") {
       selectedIndex = 1;
     } else if (value == "Campaign") {
       selectedIndex = 2;
@@ -51,6 +51,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       backgroundColor: AppColors.homeBg,
       body: screenList.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.homeBg,
         unselectedItemColor: AppColors.textFillColor,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,

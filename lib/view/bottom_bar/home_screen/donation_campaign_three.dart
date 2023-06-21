@@ -22,7 +22,6 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
         foregroundColor: AppColors.white,
         backgroundColor: AppColors.materialColor,
         elevation: 0,
-        toolbarHeight: 80,
         leading: TextButton(
           onPressed: () {
             Navigator.pop(context);
@@ -92,7 +91,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                   height: height(context) / 80,
                 ),
                 Container(
-                  height: height(context) / 1.90,
+                  height: height(context) / 1.80,
                   decoration: BoxDecoration(
                     color: AppColors.textFillColor,
                     borderRadius: BorderRadius.circular(15),

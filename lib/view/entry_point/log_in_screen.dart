@@ -178,7 +178,7 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                             const Spacer(),
                             SizedBox(
-                              width: width(context)(context) / 90,
+                              width: width(context) / 90,
                             ),
                             const Text(
                               AppStrings.finish,
@@ -192,13 +192,13 @@ class _LogInScreenState extends State<LogInScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: height(context)(context) / 25),
+                  SizedBox(height: height(context) / 25),
                   const Text(
                     AppStrings.textOne,
                     style: TextStyle(color: AppColors.textColor, fontSize: 18, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: height(context)(context) / 25),
+                  SizedBox(height: height(context) / 25),
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
