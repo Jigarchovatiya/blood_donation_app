@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: height(context) / 40,
+                  height: height(context) / 20,
                 ),
                 const Text(
                   AppStrings.profile,

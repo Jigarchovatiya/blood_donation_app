@@ -1,6 +1,5 @@
 import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:blood_donation_app/view/bottom_bar/campaign/campaigns_screen.dart';
-import 'package:blood_donation_app/view/bottom_bar/donnors/donors_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/history/history_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/home_screen/home_screen.dart';
 import 'package:blood_donation_app/view/bottom_bar/profile/profile_screen.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../res/constants/app_colors.dart';
+import 'donors/donors_screen.dart';
 
 int selectedIndex = 0;
 

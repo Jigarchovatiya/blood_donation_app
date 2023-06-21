@@ -42,8 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: const BoxDecoration(color: AppColors.white),
+              decoration: const BoxDecoration(color: AppColors.homeBg),
               height: height(context) / 3,
               child: Column(
                 children: [
@@ -76,7 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(
                     height: height(context) / 4.70,
-                    width: width(context) / 1,
                     child: PageView(
                       onPageChanged: (value) {
                         selectedIndex = value;
@@ -85,9 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       controller: pageController,
                       children: onBoardingList.map((value) {
                         return Padding(
-                          padding: const EdgeInsets.all(5),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                           child: Container(
-                            padding: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                               color: AppColors.white,
                               borderRadius: BorderRadius.circular(8),
@@ -101,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Image.asset(AppAssets.donateAndSaveLife, height: height(context) / 7),
                                 const SizedBox(width: 10),
