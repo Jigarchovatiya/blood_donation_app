@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 import '../../../utils/routes/routes_name.dart';
 
 class DonationCampaignThree extends StatefulWidget {
@@ -15,8 +16,6 @@ class DonationCampaignThree extends StatefulWidget {
 class _DonationCampaignThreeState extends State<DonationCampaignThree> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -42,7 +41,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                SizedBox(height: height / 80),
+                SizedBox(height: height(context) / 80),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -57,8 +56,8 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: width / 1.41,
-                      height: height / 100,
+                      width: width(context) / 1.41,
+                      height: height(context) / 100,
                       child: const ClipRRect(
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
@@ -71,7 +70,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                       ),
                     ),
                     SizedBox(
-                      width: width / 40,
+                      width: width(context) / 40,
                     ),
                     const Text(
                       "Step 1/3",
@@ -80,7 +79,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                   ],
                 ),
                 SizedBox(
-                  height: height / 30,
+                  height: height(context) / 30,
                 ),
                 const Align(
                   alignment: Alignment.centerLeft,
@@ -90,10 +89,10 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                   ),
                 ),
                 SizedBox(
-                  height: height / 80,
+                  height: height(context) / 80,
                 ),
                 Container(
-                  height: height / 1.90,
+                  height: height(context) / 1.90,
                   decoration: BoxDecoration(
                     color: AppColors.textFillColor,
                     borderRadius: BorderRadius.circular(15),
@@ -106,7 +105,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                           AppStrings.campaignDetails,
                           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
                         ),
-                        SizedBox(height: height / 40),
+                        SizedBox(height: height(context) / 40),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -117,19 +116,19 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                                   AppStrings.refNumber,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.campaignName,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.campaignDate,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
                               ],
                             ),
-                            SizedBox(height: height / 50),
+                            SizedBox(height: height(context) / 50),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
@@ -137,12 +136,12 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                                   AppStrings.refNo,
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.donateBloodSaveLife,
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.campaignDt,
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
@@ -151,12 +150,12 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                             ),
                           ],
                         ),
-                        SizedBox(height: height / 40),
+                        SizedBox(height: height(context) / 40),
                         const Divider(
                           thickness: 1,
                           color: AppColors.dividerGray,
                         ),
-                        SizedBox(height: height / 40),
+                        SizedBox(height: height(context) / 40),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -168,32 +167,32 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                                   AppStrings.donorName,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.gender,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.age,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.weight,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.bloodGroup,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.lastDonatedOn,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.currentMedication,
                                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.textColor),
@@ -207,32 +206,32 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                                   "Saroj Shah",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   "Male",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   "23 years",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   "65 Kg",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   "B+",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   AppStrings.campaignDt,
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 const Text(
                                   "No",
                                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
@@ -245,7 +244,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                     ),
                   ),
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -263,7 +262,7 @@ class _DonationCampaignThreeState extends State<DonationCampaignThree> {
                       foregroundColor: AppColors.white,
                       side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
-                      fixedSize: Size(width / 4, height / 50),
+                      fixedSize: Size(width(context) / 4, height(context) / 50),
                       onPressed: () {
                         Navigator.pushNamed(context, RoutesName.donationCampaignFour);
                       },

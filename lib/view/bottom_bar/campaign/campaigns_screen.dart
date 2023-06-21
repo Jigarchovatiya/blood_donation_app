@@ -5,6 +5,7 @@ import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 import '../../../utils/routes/routes_name.dart';
 
 class CampaignsScreen extends StatefulWidget {
@@ -19,8 +20,6 @@ class CampaignsScreen extends StatefulWidget {
 class _CampaignsScreenState extends State<CampaignsScreen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -51,7 +50,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return Container(
-                  height: height / 5,
+                  height: height(context) / 5,
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
@@ -68,7 +67,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(AppAssets.donateAndSaveLife, height: height / 6),
+                      Image.asset(AppAssets.donateAndSaveLife, height: height(context) / 6),
                       const SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -81,7 +80,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                           Row(
                             children: [
                               SvgPicture.asset(AppAssets.map),
-                              SizedBox(width: width / 50),
+                              SizedBox(width: width(context) / 50),
                               const Text(
                                 AppStrings.map,
                                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
@@ -91,7 +90,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                           Row(
                             children: [
                               SvgPicture.asset(AppAssets.calender),
-                              SizedBox(width: width / 50),
+                              SizedBox(width: width(context) / 50),
                               const Text(
                                 AppStrings.calender,
                                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
@@ -101,7 +100,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                           Row(
                             children: [
                               SvgPicture.asset(AppAssets.clock),
-                              SizedBox(width: width / 50),
+                              SizedBox(width: width(context) / 50),
                               const Text(
                                 AppStrings.clock,
                                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
@@ -112,7 +111,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             borderRadius: BorderRadius.circular(30),
                             backgroundColor: AppColors.materialColor,
                             foregroundColor: AppColors.white,
-                            fixedSize: Size(width / 2.2, height / 100),
+                            fixedSize: Size(width(context) / 2.2, height(context) / 100),
                             buttonText: AppStrings.donate,
                             side: const BorderSide(style: BorderStyle.none),
                             onPressed: () {

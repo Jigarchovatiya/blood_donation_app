@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/model/campaign_two_model.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 import '../../../utils/routes/routes_name.dart';
 
 class DonationCampaignTwo extends StatefulWidget {
@@ -14,14 +16,10 @@ class DonationCampaignTwo extends StatefulWidget {
 
 class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
   List<bool> isSelectedList = [false, false, false, false, false];
-  List timeList = ["10:00 am", "11:30 am", "1:00 pm", "2:30 pm", "4:00 pm"];
-
   String? selectedTime = "";
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -47,7 +45,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                SizedBox(height: height / 80),
+                SizedBox(height: height(context) / 80),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -62,7 +60,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: width / 1.41,
+                      width: width(context) / 1.41,
                       height: 8,
                       child: const ClipRRect(
                         borderRadius: BorderRadius.all(
@@ -76,7 +74,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                       ),
                     ),
                     SizedBox(
-                      width: width / 40,
+                      width: width(context) / 40,
                     ),
                     const Text(
                       "Step 1/3",
@@ -84,7 +82,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                     ),
                   ],
                 ),
-                SizedBox(height: height / 80),
+                SizedBox(height: height(context) / 80),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -96,7 +94,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                   ),
                 ),
                 SizedBox(
-                  height: height / 50,
+                  height: height(context) / 50,
                 ),
                 Wrap(
                   spacing: 20,
@@ -130,7 +128,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                     );
                   }),
                 ),
-                SizedBox(height: height / 2.2),
+                SizedBox(height: height(context) / 2.2),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -148,7 +146,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                       foregroundColor: AppColors.white,
                       side: const BorderSide(style: BorderStyle.none),
                       backgroundColor: AppColors.materialColor,
-                      fixedSize: Size(width / 5, height / 50),
+                      fixedSize: Size(width(context) / 5, height(context) / 50),
                       onPressed: () {
                         Navigator.pushNamed(context, RoutesName.donationCampaignThree);
                       },

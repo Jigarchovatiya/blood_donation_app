@@ -9,6 +9,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../res/global/media_quary.dart';
+
 class EmailLogInScreen extends StatefulWidget {
   const EmailLogInScreen({Key? key}) : super(key: key);
 
@@ -18,15 +20,11 @@ class EmailLogInScreen extends StatefulWidget {
 
 class _EmailLogInScreenState extends State<EmailLogInScreen> {
   bool isChecked = false;
-
   User? person;
-
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -101,7 +99,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                         ],
                       ),
                       SizedBox(
-                        height: height / 90,
+                        height: height(context) / 90,
                       ),
                       Row(
                         children: [
@@ -130,13 +128,13 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 const Text(
                   AppStrings.textOne,
                   style: TextStyle(color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -144,14 +142,14 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                     style: TextStyle(color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height(context) / 50),
                 AppTextField(
                   validator: (value) => value!.isValidEmail() ? null : "Please Enter Correct E-mail",
                   controller: email,
                   hintText: "Enter Email",
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height(context) / 50),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -199,7 +197,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 AppButton(
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.materialColor,
@@ -217,7 +215,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                     // setState(() {});
                   },
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 const Row(
                   children: [
                     Expanded(
@@ -242,7 +240,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height(context) / 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -255,7 +253,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                         child: SvgPicture.asset(AppAssets.fb),
                       ),
                     ),
-                    SizedBox(width: width / 30),
+                    SizedBox(width: width(context) / 30),
                     InkWell(
                       onTap: () {
                         debugPrint("Google Taped -->");
@@ -265,7 +263,7 @@ class _EmailLogInScreenState extends State<EmailLogInScreen> {
                         child: SvgPicture.asset(AppAssets.google),
                       ),
                     ),
-                    SizedBox(width: width / 30),
+                    SizedBox(width: width(context) / 30),
                     InkWell(
                       onTap: () {
                         debugPrint("Twitter Taped -->");

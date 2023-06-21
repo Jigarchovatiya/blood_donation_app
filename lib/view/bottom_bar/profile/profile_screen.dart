@@ -3,6 +3,9 @@ import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:blood_donation_app/res/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/model/profile_model.dart';
+import '../../../res/global/media_quary.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -13,17 +16,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    List<Map<String, Widget>> profileList = [
-      {"icon": const Icon(Icons.person_outline), "title": const Text("Edit Profile")},
-      {"icon": const Icon(Icons.notifications_none), "title": const Text("Notification")},
-      {"icon": const Icon(Icons.settings), "title": const Text("Settings")},
-      {"icon": const Icon(Icons.privacy_tip_outlined), "title": const Text("Privacy Policy")},
-      {"icon": const Icon(Icons.sticky_note_2_outlined), "title": const Text("Terms & Condition")},
-      {"icon": const Icon(Icons.help_outline), "title": const Text("Help")},
-      {"icon": const Icon(Icons.logout, color: AppColors.red), "title": const Text("Log Out")},
-    ];
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       // appBar: AppBar(
@@ -53,20 +45,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: height / 40,
+                  height: height(context) / 40,
                 ),
                 const Text(
                   AppStrings.profile,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.white),
                 ),
                 SizedBox(
-                  height: height / 10,
+                  height: height(context) / 10,
                 ),
                 Stack(
                   children: [
                     Image.asset(
                       AppAssets.profileImage,
-                      height: width / 3.5,
+                      height: width(context) / 3.5,
                     ),
                     Positioned(
                       bottom: 0,
@@ -93,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
                 SizedBox(
-                  height: height / 50,
+                  height: height(context) / 50,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                     ),
                     SizedBox(
-                      width: width / 80,
+                      width: width(context) / 80,
                     ),
                     Icon(
                       Icons.verified,
@@ -115,9 +107,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   "aasma@gmail.com",
                   style: TextStyle(color: AppColors.textColor),
                 ),
-                SizedBox(height: height / 40),
+                SizedBox(height: height(context) / 40),
                 SizedBox(
-                  height: height / 22,
+                  height: height(context) / 18,
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

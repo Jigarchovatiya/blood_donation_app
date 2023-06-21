@@ -5,6 +5,7 @@ import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 
 class DonationCampaignFour extends StatefulWidget {
   const DonationCampaignFour({Key? key}) : super(key: key);
@@ -16,8 +17,6 @@ class DonationCampaignFour extends StatefulWidget {
 class _DonationCampaignFourState extends State<DonationCampaignFour> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -35,11 +34,11 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
             child: Column(
               children: [
                 SizedBox(
-                  height: height / 10,
+                  height: height(context) / 10,
                 ),
                 Container(
-                  height: height / 1.80,
-                  width: width / 1.10,
+                  height: height(context) / 1.80,
+                  width: width(context) / 1.10,
                   decoration: BoxDecoration(
                     color: AppColors.textFillColor,
                     borderRadius: BorderRadius.circular(15),
@@ -60,14 +59,14 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                           ],
                         ),
                         SizedBox(
-                          height: height / 20,
+                          height: height(context) / 20,
                         ),
                         Image.asset(
                           AppAssets.verified,
-                          height: height / 6,
+                          height: height(context) / 6,
                         ),
                         SizedBox(
-                          height: height / 20,
+                          height: height(context) / 20,
                         ),
                         const Text(
                           AppStrings.registeredSuccessfully,
@@ -84,19 +83,19 @@ class _DonationCampaignFourState extends State<DonationCampaignFour> {
                           ),
                         ),
                         SizedBox(
-                          height: height / 20,
+                          height: height(context) / 20,
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: height / 10),
+                SizedBox(height: height(context) / 10),
                 AppButton(
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.white,
                   foregroundColor: AppColors.materialColor,
-                  side: BorderSide(width: width / 300, color: AppColors.materialColor),
-                  fixedSize: Size(width / 1.1, height / 15),
+                  side: BorderSide(width: width(context) / 300, color: AppColors.materialColor),
+                  fixedSize: Size(width(context) / 1.1, height(context) / 15),
                   onPressed: () {},
                   buttonText: AppStrings.downloadPdf,
                 ),

@@ -2,9 +2,11 @@ import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../data/model/donor_model.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 
 class DonorScreen extends StatefulWidget {
   final Function(String)? onTab;
@@ -18,57 +20,9 @@ class DonorScreen extends StatefulWidget {
 class _DonorScreenState extends State<DonorScreen> {
   bool isSelected = false;
   String? bloodGroup = "";
-  List<Map<String, dynamic>> donationCampaignsList = [
-    {
-      "image": AppAssets.pageOne,
-      "text": AppStrings.welCome,
-      "subText": AppStrings.pageOneDisc,
-    },
-    {
-      "image": AppAssets.pageTwo,
-      "text": AppStrings.connectingDonors,
-      "subText": AppStrings.pageTwoDisc,
-    },
-    {
-      "image": AppAssets.pageThree,
-      "text": AppStrings.joinUsToday,
-      "subText": AppStrings.pageThreeDisc,
-    },
-  ];
-  List profileImageList = [
-    AppAssets.profileOne,
-    AppAssets.profileTwo,
-    AppAssets.profileThree,
-    AppAssets.profileFour,
-    AppAssets.profileFive,
-    AppAssets.profileSix,
-    AppAssets.profileSeven,
-    AppAssets.profileFive,
-  ];
-  List donorsNameList = [
-    AppStrings.donorOne,
-    AppStrings.donorTwo,
-    AppStrings.donorThree,
-    AppStrings.donorFour,
-    AppStrings.donorFive,
-    AppStrings.donorSix,
-    AppStrings.donorSeven,
-  ];
-  List bloodGroupList = [
-    "All",
-    "A+",
-    "A-",
-    "AB+",
-    "AB-",
-    "O+",
-    "O-",
-    "B+",
-    "B-",
-  ];
+
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.materialColor,
@@ -81,7 +35,7 @@ class _DonorScreenState extends State<DonorScreen> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(height / 80),
+                padding: EdgeInsets.all(height(context) / 80),
                 child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -110,9 +64,9 @@ class _DonorScreenState extends State<DonorScreen> {
                       });
                     },
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
+                      padding: EdgeInsets.symmetric(horizontal: width(context) / 60, vertical: height(context) / 200),
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: width / 60, vertical: height / 200),
+                        padding: EdgeInsets.symmetric(horizontal: width(context) / 60, vertical: height(context) / 200),
                         decoration: BoxDecoration(
                           color: bloodGroup == bloodGroupList[index] ? AppColors.materialColor : AppColors.buttonBg,
                           borderRadius: BorderRadius.circular(32),
@@ -156,7 +110,7 @@ class _DonorScreenState extends State<DonorScreen> {
                         child: Row(
                           children: [
                             Image.asset(profileImageList[index], height: 78),
-                            SizedBox(width: width / 30),
+                            SizedBox(width: width(context) / 30),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,11 +122,11 @@ class _DonorScreenState extends State<DonorScreen> {
                                     fontSize: 16,
                                   ),
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 Row(
                                   children: [
                                     SvgPicture.asset(AppAssets.mapGray),
-                                    SizedBox(width: width / 50),
+                                    SizedBox(width: width(context) / 50),
                                     const Text(
                                       "Kadaghari, Kathmandu",
                                       style: TextStyle(
@@ -182,11 +136,11 @@ class _DonorScreenState extends State<DonorScreen> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: height / 80),
+                                SizedBox(height: height(context) / 80),
                                 Row(
                                   children: [
                                     SvgPicture.asset(AppAssets.call),
-                                    SizedBox(width: width / 50),
+                                    SizedBox(width: width(context) / 50),
                                     const Text(
                                       "+977 98654321987",
                                       style: TextStyle(
@@ -206,7 +160,7 @@ class _DonorScreenState extends State<DonorScreen> {
                                   bloodGroupList[index],
                                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
                                 ),
-                                SizedBox(height: height / 50),
+                                SizedBox(height: height(context) / 50),
                                 CircleAvatar(
                                   radius: 18,
                                   foregroundColor: Colors.white,

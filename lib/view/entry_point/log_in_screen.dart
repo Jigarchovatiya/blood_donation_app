@@ -9,6 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import '../../res/global/media_quary.dart';
 import '../../utils/routes/routes_name.dart';
 import 'otp_log_in_screen.dart';
 
@@ -82,8 +83,6 @@ class _LogInScreenState extends State<LogInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -164,7 +163,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: height / 90,
+                          height: height(context) / 90,
                         ),
                         Row(
                           children: [
@@ -179,27 +178,27 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                             const Spacer(),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width / 90,
+                              width: width(context)(context) / 90,
                             ),
                             const Text(
                               AppStrings.finish,
                               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14, color: AppColors.textColor),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width / 90,
+                              width: width(context) / 90,
                             ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: height / 25),
+                  SizedBox(height: height(context)(context) / 25),
                   const Text(
                     AppStrings.textOne,
                     style: TextStyle(color: AppColors.textColor, fontSize: 18, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: height / 25),
+                  SizedBox(height: height(context)(context) / 25),
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -278,12 +277,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height / 20),
+                  SizedBox(height: height(context) / 20),
                   AppButton(
                     borderRadius: BorderRadius.circular(30),
                     backgroundColor: AppColors.materialColor,
                     foregroundColor: AppColors.white,
-                    fixedSize: Size(width / 1.14, height / 15),
+                    fixedSize: Size(width(context) / 1.14, height(context) / 15),
                     side: const BorderSide(style: BorderStyle.none),
                     buttonText: AppStrings.continueButton,
                     onPressed: () {
@@ -314,7 +313,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       // setState(() {});
                     },
                   ),
-                  SizedBox(height: height / 20),
+                  SizedBox(height: height(context) / 20),
                   const Row(
                     children: [
                       Expanded(
@@ -339,7 +338,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height / 30),
+                  SizedBox(height: height(context) / 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -352,7 +351,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           child: SvgPicture.asset(AppAssets.fb),
                         ),
                       ),
-                      SizedBox(width: width / 30),
+                      SizedBox(width: width(context) / 30),
                       InkWell(
                         onTap: () async {
                           userCredential = await signInWithGoogle();
@@ -364,7 +363,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           child: SvgPicture.asset(AppAssets.google),
                         ),
                       ),
-                      SizedBox(width: width / 30),
+                      SizedBox(width: width(context) / 30),
                       InkWell(
                         onTap: () {
                           debugPrint("Twitter Taped -->");

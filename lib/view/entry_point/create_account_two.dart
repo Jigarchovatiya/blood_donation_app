@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
+import '../../res/global/media_quary.dart';
 
 class CreateAccountTwo extends StatefulWidget {
   const CreateAccountTwo({Key? key}) : super(key: key);
@@ -16,8 +17,6 @@ class CreateAccountTwo extends StatefulWidget {
 class _CreateAccountTwoState extends State<CreateAccountTwo> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
@@ -93,11 +92,11 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                         ),
                       ],
                     ),
-                    SizedBox(height: height / 90),
+                    SizedBox(height: height(context) / 90),
                     Row(
                       children: [
                         SizedBox(
-                          width: width / 100,
+                          width: width(context) / 100,
                         ),
                         const Text(
                           AppStrings.login,
@@ -110,14 +109,14 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                         ),
                         const Spacer(),
                         SizedBox(
-                          width: width / 200,
+                          width: width(context) / 200,
                         ),
                         const Text(
                           AppStrings.finish,
                           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14, color: AppColors.textColor),
                         ),
                         SizedBox(
-                          width: width / 200,
+                          width: width(context) / 200,
                         ),
                       ],
                     ),
@@ -126,8 +125,8 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
               ),
               const SizedBox(height: 50),
               Container(
-                height: height / 2,
-                width: width / 1.2,
+                height: height(context) / 2,
+                width: width(context) / 1.2,
                 decoration: BoxDecoration(
                   color: AppColors.textFillColor,
                   borderRadius: BorderRadius.circular(15),
@@ -146,17 +145,17 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                   ),
                 ),
               ),
-              SizedBox(height: height / 10),
+              SizedBox(height: height(context) / 10),
               AppButton(
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: Size(width / 1.14, height / 15),
+                fixedSize: Size(width(context) / 1.14, height(context) / 15),
                 side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {},
                 buttonText: AppStrings.goToHomePage,
               ),
-              SizedBox(height: height / 20),
+              SizedBox(height: height(context) / 20),
             ],
           ),
         ),

@@ -3,6 +3,7 @@ import 'package:blood_donation_app/res/common/app_text_field.dart';
 import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/model/campaign_one_model.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
@@ -19,53 +20,8 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
   TextEditingController weight = TextEditingController();
   TextEditingController additionalInformation = TextEditingController();
   String bloodGroupData = "group 1";
-  List bloodGroupList = [
-    {
-      "value": "group 1",
-      "data": "O+",
-    },
-    {
-      "value": "group 2",
-      "data": "O-",
-    },
-    {
-      "value": "group 3",
-      "data": "A+",
-    },
-    {
-      "value": "group 4",
-      "data": "A-",
-    },
-    {
-      "value": "group 5",
-      "data": "B+",
-    },
-    {
-      "value": "group 6",
-      "data": "B-",
-    },
-    {
-      "value": "group 7",
-      "data": "AB+",
-    },
-    {
-      "value": "group 8",
-      "data": "AB-",
-    },
-  ];
   String answerData = "answer 1";
-  List answerList = [
-    {
-      "value": "answer 1",
-      "data": "Yes",
-    },
-    {
-      "value": "answer 2",
-      "data": "No",
-    },
-  ];
   DateTime? selectedDate;
-
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,

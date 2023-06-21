@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
+import '../../../res/global/media_quary.dart';
 
 class DonorsDetailScreen extends StatefulWidget {
   const DonorsDetailScreen({super.key});
@@ -16,8 +17,6 @@ class DonorsDetailScreen extends StatefulWidget {
 class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -41,9 +40,9 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: height / 50),
-            Image.asset(AppAssets.profileImage, height: height / 5.5),
-            SizedBox(height: height / 80),
+            SizedBox(height: height(context) / 50),
+            Image.asset(AppAssets.profileImage, height: height(context) / 5.5),
+            SizedBox(height: height(context) / 80),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -51,7 +50,7 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
                   "Aasma Shrestha",
                 ),
                 SizedBox(
-                  width: width / 80,
+                  width: width(context) / 80,
                 ),
                 Icon(
                   Icons.verified,
@@ -62,9 +61,9 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
             const Text(
               "aasma@gmail.com",
             ),
-            SizedBox(height: height / 50),
+            SizedBox(height: height(context) / 50),
             SizedBox(
-              height: height / 22,
+              height: height(context) / 22,
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -109,7 +108,7 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
                 ],
               ),
             ),
-            SizedBox(height: height / 40),
+            SizedBox(height: height(context) / 40),
             Padding(
               padding: const EdgeInsets.all(20),
               child: ListView.builder(
@@ -134,13 +133,13 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: height / 70,
+                        height: height(context) / 70,
                       ),
                       const Divider(
                         thickness: 1,
                       ),
                       SizedBox(
-                        height: height / 70,
+                        height: height(context) / 70,
                       ),
                     ],
                   );
@@ -148,14 +147,14 @@ class _DonorsDetailScreenState extends State<DonorsDetailScreen> {
               ),
             ),
             SizedBox(
-              height: height / 50,
+              height: height(context) / 50,
             ),
             AppButton(
               borderRadius: BorderRadius.circular(30),
               backgroundColor: AppColors.materialColor,
               foregroundColor: AppColors.white,
               side: BorderSide.none,
-              fixedSize: Size(width / 1.14, height / 15),
+              fixedSize: Size(width(context) / 1.14, height(context) / 15),
               onPressed: () {
                 Navigator.pushNamed(context, RoutesName.contactScreen);
               },

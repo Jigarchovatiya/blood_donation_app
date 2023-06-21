@@ -4,9 +4,11 @@ import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/model/campaign_one_model.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
+import '../../res/global/media_quary.dart';
 
 class CreateAccountOne extends StatefulWidget {
   final Function(String)? onTab;
@@ -41,40 +43,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   String bloodGroupData = "group 1";
-  List bloodGroupList = [
-    {
-      "value": "group 1",
-      "data": "O+",
-    },
-    {
-      "value": "group 2",
-      "data": "O-",
-    },
-    {
-      "value": "group 3",
-      "data": "A+",
-    },
-    {
-      "value": "group 4",
-      "data": "A-",
-    },
-    {
-      "value": "group 5",
-      "data": "B+",
-    },
-    {
-      "value": "group 6",
-      "data": "B-",
-    },
-    {
-      "value": "group 7",
-      "data": "AB+",
-    },
-    {
-      "value": "group 8",
-      "data": "AB-",
-    },
-  ];
+
   String genderData = "gender 1";
   List genderList = [
     {
@@ -92,8 +61,6 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
   ];
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -174,11 +141,11 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                         ),
                       ],
                     ),
-                    SizedBox(height: height / 90),
+                    SizedBox(height: height(context) / 90),
                     Row(
                       children: [
                         SizedBox(
-                          width: width / 100,
+                          width: width(context) / 100,
                         ),
                         const Text(
                           AppStrings.login,
@@ -191,21 +158,21 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                         ),
                         const Spacer(),
                         SizedBox(
-                          width: width / 200,
+                          width: width(context) / 200,
                         ),
                         const Text(
                           AppStrings.finish,
                           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14, color: AppColors.textColor),
                         ),
                         SizedBox(
-                          width: width / 200,
+                          width: width(context) / 200,
                         ),
                       ],
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: height / 50),
+              SizedBox(height: height(context) / 50),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
@@ -220,14 +187,14 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                     const AppTextField(
                       hintText: AppStrings.fullName,
                     ),
-                    SizedBox(height: height / 50),
+                    SizedBox(height: height(context) / 50),
                     Row(
                       children: [
                         const Text(
                           AppStrings.age,
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(width: width / 2.45),
+                        SizedBox(width: width(context) / 2.45),
                         const Text(
                           AppStrings.bloodGroup,
                           style: TextStyle(fontSize: 18),
@@ -238,11 +205,11 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppTextField(
-                          width: width / 2.4,
+                          width: width(context) / 2.4,
                           hintText: "20",
                         ),
                         AppTextField(
-                          width: width / 2.4,
+                          width: width(context) / 2.4,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -271,14 +238,14 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                         ),
                       ],
                     ),
-                    SizedBox(height: height / 50),
+                    SizedBox(height: height(context) / 50),
                     Row(
                       children: [
                         const Text(
                           AppStrings.gender,
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(width: width / 3),
+                        SizedBox(width: width(context) / 3),
                         const Text(
                           AppStrings.weight,
                           style: TextStyle(fontSize: 18),
@@ -289,7 +256,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppTextField(
-                          width: width / 2.4,
+                          width: width(context) / 2.4,
                           hintText: AppStrings.fullName,
                           suffixIcon: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -313,12 +280,12 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                           ),
                         ),
                         AppTextField(
-                          width: width / 2.4,
+                          width: width(context) / 2.4,
                           hintText: "60",
                         ),
                       ],
                     ),
-                    SizedBox(height: height / 50),
+                    SizedBox(height: height(context) / 50),
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -331,7 +298,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                       keyboardType: TextInputType.emailAddress,
                       hintText: AppStrings.emailExample,
                     ),
-                    SizedBox(height: height / 50),
+                    SizedBox(height: height(context) / 50),
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -347,12 +314,12 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                   ],
                 ),
               ),
-              SizedBox(height: height / 20),
+              SizedBox(height: height(context) / 20),
               AppButton(
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,
                 foregroundColor: AppColors.white,
-                fixedSize: Size(width / 1.14, height / 15),
+                fixedSize: Size(width(context) / 1.14, height(context) / 15),
                 buttonText: AppStrings.continueButton,
                 side: const BorderSide(style: BorderStyle.none),
                 onPressed: () {
@@ -361,7 +328,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                   debugPrint("user --> $person");
                 },
               ),
-              SizedBox(height: height / 20),
+              SizedBox(height: height(context) / 20),
             ],
           ),
         ),

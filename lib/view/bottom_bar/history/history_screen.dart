@@ -68,9 +68,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         children: [
                           Column(
                             children: [
-                              SizedBox(height: height / 80),
+                              SizedBox(height: height / 200),
                               AppCircleAvatar(
-                                radius: height / 30,
+                                radius: height / 32,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
                                 child: const Icon(Icons.restore),
@@ -98,7 +98,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   const Text("2023/05/02"),
                                 ],
                               ),
-                              SizedBox(width: width / 50),
+                              SizedBox(height: height / 200),
                               Row(
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
@@ -174,9 +174,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         children: [
                           Column(
                             children: [
-                              SizedBox(height: height / 80),
+                              SizedBox(height: height / 200),
                               AppCircleAvatar(
-                                radius: height / 30,
+                                radius: height / 32,
                                 foregroundColor: AppColors.black,
                                 backgroundColor: AppColors.dividerColor,
                                 child: const Icon(Icons.restore),
@@ -204,6 +204,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   const Text("2023/05/02"),
                                 ],
                               ),
+                              SizedBox(height: height / 200),
                               Row(
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
@@ -227,7 +228,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 ),
                                 child: Center(
                                   child: Text(
-                                    "Donate",
+                                    index == 0 ? "Received" : "Donate",
                                     style: TextStyle(
                                       color: index == 0 ? AppColors.textGreen : AppColors.materialColor,
                                       fontSize: 14,

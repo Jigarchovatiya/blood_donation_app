@@ -10,6 +10,7 @@ import 'package:otp_text_field/style.dart';
 import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
+import '../../res/global/media_quary.dart';
 import '../../utils/routes/routes_name.dart';
 
 class OtpLogInScreen extends StatefulWidget {
@@ -23,8 +24,6 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
   TextEditingController mobile = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
@@ -104,7 +103,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: height / 90),
+                      SizedBox(height: height(context) / 90),
                       Row(
                         children: [
                           SizedBox(
@@ -135,7 +134,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height(context) / 50),
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
@@ -160,7 +159,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: height / 50),
+                SizedBox(height: height(context) / 50),
                 OTPTextField(
                   otpFieldStyle: OtpFieldStyle(
                     borderColor: AppColors.black,
@@ -178,7 +177,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     color: AppColors.materialColor,
                   ),
                 ),
-                SizedBox(height: height / 30),
+                SizedBox(height: height(context) / 30),
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
@@ -210,12 +209,12 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: height / 20),
+                SizedBox(height: height(context) / 20),
                 AppButton(
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: AppColors.materialColor,
                   foregroundColor: AppColors.white,
-                  fixedSize: Size(width / 1.14, height / 15),
+                  fixedSize: Size(width(context) / 1.14, height(context) / 15),
                   side: const BorderSide(style: BorderStyle.none),
                   onPressed: () {
                     Navigator.pushNamed(context, RoutesName.createAccountOne);
