@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../data/model/donation_campaign_model.dart';
 import '../../../res/common/app_button.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
@@ -45,7 +46,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
               ),
             ),
             ListView.builder(
-              itemCount: 5,
+              itemCount: campaignList.length,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
@@ -73,17 +74,17 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            AppStrings.donateAndSaveLife,
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          Text(
+                            campaignList[index]["title"],
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                           ),
                           Row(
                             children: [
                               SvgPicture.asset(AppAssets.map),
                               SizedBox(width: width(context) / 50),
-                              const Text(
-                                AppStrings.map,
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                              Text(
+                                campaignList[index]["location"],
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                               ),
                             ],
                           ),
@@ -91,9 +92,9 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             children: [
                               SvgPicture.asset(AppAssets.calender),
                               SizedBox(width: width(context) / 50),
-                              const Text(
-                                AppStrings.calender,
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                              Text(
+                                campaignList[index]["date"],
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                               ),
                             ],
                           ),
@@ -101,9 +102,9 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
                             children: [
                               SvgPicture.asset(AppAssets.clock),
                               SizedBox(width: width(context) / 50),
-                              const Text(
-                                AppStrings.clock,
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                              Text(
+                                campaignList[index]["time"],
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                               ),
                             ],
                           ),

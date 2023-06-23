@@ -1,3 +1,4 @@
+import 'package:blood_donation_app/data/model/donation_campaign_model.dart';
 import 'package:blood_donation_app/data/model/donor_model.dart';
 import 'package:blood_donation_app/res/constants/app_colors.dart';
 import 'package:blood_donation_app/utils/routes/routes_name.dart';
@@ -77,14 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: height(context) / 4.70,
-                    child: PageView(
-                      onPageChanged: (value) {
-                        selectedIndex = value;
-                        setState(() {});
-                      },
-                      controller: pageController,
-                      children: onBoardingList.map((value) {
+                    height: height(context) / 5.55,
+                    child: PageView.builder(
+                      itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                           child: Container(
@@ -104,23 +100,23 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset(AppAssets.donateAndSaveLife, height: height(context) / 7),
+                                Image.asset(campaignList[index]["image"], height: height(context) / 7),
                                 const SizedBox(width: 10),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      AppStrings.donateAndSaveLife,
-                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                                    Text(
+                                      campaignList[index]["title"],
+                                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                                     ),
                                     Row(
                                       children: [
                                         SvgPicture.asset(AppAssets.map),
                                         SizedBox(width: width(context) / 50),
-                                        const Text(
-                                          AppStrings.map,
-                                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                                        Text(
+                                          campaignList[index]["location"],
+                                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -128,9 +124,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: [
                                         SvgPicture.asset(AppAssets.calender),
                                         SizedBox(width: width(context) / 50),
-                                        const Text(
-                                          AppStrings.calender,
-                                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                                        Text(
+                                          campaignList[index]["date"],
+                                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -138,9 +134,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: [
                                         SvgPicture.asset(AppAssets.clock),
                                         SizedBox(width: width(context) / 50),
-                                        const Text(
-                                          AppStrings.clock,
-                                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                                        Text(
+                                          campaignList[index]["time"],
+                                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -161,7 +157,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         );
-                      }).toList(),
+                      },
+                      itemCount: campaignList.length,
+                      onPageChanged: (value) {
+                        selectedIndex = value;
+                        setState(() {});
+                      },
+                      controller: pageController,
                     ),
                   ),
                   SizedBox(
@@ -170,8 +172,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   Center(
                     child: SmoothPageIndicator(
                         controller: pageController, // PageController
-                        count: 3,
+                        count: campaignList.length,
                         effect: ScrollingDotsEffect(
+                          spacing: 10,
                           activeDotColor: AppColors.materialColor,
                           dotHeight: height(context) / 150,
                           dotWidth: width(context) / 15,
@@ -257,7 +260,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.separated(
                 separatorBuilder: (context, index) => SizedBox(height: height(context) / 60),
                 shrinkWrap: true,
-                itemCount: 5,
+                itemCount: donorList.length,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Container(
@@ -275,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              donorsNameList[index],
+                              donorList[index]["name"],
                               style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
@@ -286,9 +289,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 SvgPicture.asset(AppAssets.mapGray),
                                 SizedBox(width: width(context) / 50),
-                                const Text(
-                                  "Kadaghari, Kathmandu",
-                                  style: TextStyle(
+                                Text(
+                                  donorList[index]["location"],
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 12,
                                   ),
@@ -300,9 +303,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 SvgPicture.asset(AppAssets.call),
                                 SizedBox(width: width(context) / 50),
-                                const Text(
-                                  "+977 98654321987",
-                                  style: TextStyle(
+                                Text(
+                                  donorList[index]["phone"],
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 12,
                                   ),
@@ -316,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              bloodGroupList[index],
+                              donorList[index]["group"],
                               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
                             ),
                             SizedBox(height: height(context) / 50),

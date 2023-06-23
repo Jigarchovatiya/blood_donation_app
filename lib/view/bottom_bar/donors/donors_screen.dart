@@ -2,6 +2,7 @@ import 'package:blood_donation_app/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../data/model/donation_campaign_model.dart';
 import '../../../data/model/donor_model.dart';
 import '../../../res/constants/app_assets.dart';
 import '../../../res/constants/app_colors.dart';
@@ -98,7 +99,7 @@ class _DonorScreenState extends State<DonorScreen> {
                   child: ListView.separated(
                     separatorBuilder: (context, index) => const SizedBox(height: 10),
                     shrinkWrap: true,
-                    itemCount: 5,
+                    itemCount: donorList.length,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) {
                       return Container(
@@ -109,14 +110,14 @@ class _DonorScreenState extends State<DonorScreen> {
                         ),
                         child: Row(
                           children: [
-                            Image.asset(profileImageList[index], height: 78),
+                            Image.asset(donorList[index]["image"], height: 78),
                             SizedBox(width: width(context) / 30),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  donorsNameList[index],
+                                  donorList[index]["name"],
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16,
@@ -127,9 +128,9 @@ class _DonorScreenState extends State<DonorScreen> {
                                   children: [
                                     SvgPicture.asset(AppAssets.mapGray),
                                     SizedBox(width: width(context) / 50),
-                                    const Text(
-                                      "Kadaghari, Kathmandu",
-                                      style: TextStyle(
+                                    Text(
+                                      donorList[index]["location"],
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 12,
                                       ),
@@ -141,9 +142,9 @@ class _DonorScreenState extends State<DonorScreen> {
                                   children: [
                                     SvgPicture.asset(AppAssets.call),
                                     SizedBox(width: width(context) / 50),
-                                    const Text(
-                                      "+977 98654321987",
-                                      style: TextStyle(
+                                    Text(
+                                      donorList[index]["phone"],
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 12,
                                       ),
@@ -157,7 +158,7 @@ class _DonorScreenState extends State<DonorScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  bloodGroupList[index],
+                                  donorList[index]["group"],
                                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.materialColor),
                                 ),
                                 SizedBox(height: height(context) / 50),

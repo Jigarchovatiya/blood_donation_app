@@ -122,7 +122,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       Center(
                         child: SmoothPageIndicator(
                             controller: pageController, // PageController
-                            count: 3,
+                            count: onBoardingList.length,
                             effect: SwapEffect(activeDotColor: AppColors.materialColor, dotHeight: 10, dotWidth: 10), // your preferred effect
                             onDotClicked: (index) {}),
                       ),

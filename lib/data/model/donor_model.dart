@@ -1,14 +1,6 @@
 import '../../res/constants/app_assets.dart';
 import '../../res/constants/app_strings.dart';
 
-class DonorModel {
-  final String title;
-  final String image;
-  final String subText;
-
-  DonorModel(this.title, this.image, this.subText);
-}
-
 List<Map<String, dynamic>> onBoardingList = [
   {
     "image": AppAssets.pageOne,
@@ -36,16 +28,6 @@ List profileImageList = [
   AppAssets.profileSix,
   AppAssets.profileSeven,
   AppAssets.profileFive,
-];
-
-List donorsNameList = [
-  AppStrings.donorOne,
-  AppStrings.donorTwo,
-  AppStrings.donorThree,
-  AppStrings.donorFour,
-  AppStrings.donorFive,
-  AppStrings.donorSix,
-  AppStrings.donorSeven,
 ];
 
 List bloodGroupList = [

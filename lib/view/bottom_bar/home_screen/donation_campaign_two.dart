@@ -147,7 +147,7 @@ class _DonationCampaignTwoState extends State<DonationCampaignTwo> {
                       backgroundColor: AppColors.materialColor,
                       fixedSize: Size(width(context) / 5, height(context) / 50),
                       onPressed: () {
-                        Navigator.pushNamed(context, RoutesName.donationCampaignThree);
+                        isSelectedList != true ? Navigator.pushNamed(context, RoutesName.donationCampaignThree) : null;
                       },
                       buttonText: AppStrings.next,
                     ),
