@@ -31,25 +31,28 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(right: width(context) / 200),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(Icons.arrow_back_ios, size: 15),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(context, RoutesName.logInScreen, (route) => false);
-                        },
-                        child: const Text(
-                          AppStrings.skip,
-                          style: TextStyle(decoration: TextDecoration.underline, color: AppColors.textColor),
+                  child: Padding(
+                    padding: EdgeInsets.only(right: width(context) / 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: const Icon(Icons.arrow_back_ios, size: 15),
                         ),
-                      ),
-                    ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamedAndRemoveUntil(context, RoutesName.logInScreen, (route) => false);
+                          },
+                          child: const Text(
+                            AppStrings.skip,
+                            style: TextStyle(decoration: TextDecoration.underline, color: AppColors.textColor),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

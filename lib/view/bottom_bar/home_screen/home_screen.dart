@@ -46,32 +46,35 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height(context) / 3,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        AppStrings.donationCampaignsNearYou,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          widget.onTab!("Campaign");
-                        },
-                        child: Text(
-                          AppStrings.seeAll,
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          AppStrings.donationCampaignsNearYou,
                           style: TextStyle(
-                            color: AppColors.materialColor,
-                            decoration: TextDecoration.underline,
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
+                            color: AppColors.black,
                           ),
                         ),
-                      ),
-                    ],
+                        GestureDetector(
+                          onTap: () {
+                            widget.onTab!("Campaign");
+                          },
+                          child: Text(
+                            AppStrings.seeAll,
+                            style: TextStyle(
+                              color: AppColors.materialColor,
+                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: height(context) / 4.70,
@@ -179,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -190,8 +193,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       widget.onTab!("Donor");
                     },
                     child: Text(

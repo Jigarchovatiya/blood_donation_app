@@ -98,13 +98,16 @@ class _LogInScreenState extends State<LogInScreen> {
         ),
         centerTitle: true,
         actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
-            },
-            child: const Text(
-              AppStrings.skip,
-              style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width(context) / 20, vertical: height(context) / 30),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
+              },
+              child: const Text(
+                AppStrings.skip,
+                style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline, fontSize: 16),
+              ),
             ),
           ),
         ],
