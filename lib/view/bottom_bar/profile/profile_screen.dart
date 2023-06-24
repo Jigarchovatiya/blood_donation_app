@@ -32,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   File? imageFile;
 
   pickImage() async {
-    image = await picker.pickImage(source: ImageSource.camera);
+    image = await picker.pickImage(source: ImageSource.gallery);
     imageFile = File(image!.path);
     storeImage();
     setState(() {});
@@ -88,8 +88,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             decoration: BoxDecoration(
               color: AppColors.materialColor,
               borderRadius: const BorderRadius.only(
-                bottomRight: Radius.elliptical(300, 100),
-                bottomLeft: Radius.elliptical(300, 100),
+                bottomRight: Radius.elliptical(300, 115),
+                bottomLeft: Radius.elliptical(300, 115),
               ),
             ),
           ),
@@ -108,15 +108,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Stack(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      pickImage();
-                    },
-                    child: Image.asset(
-                      AppAssets.profileImage,
-                      height: width(context) / 3.2,
-                    ),
-                  ),
+                  imageFile != null
+                      ? Image.file(
+                          imageFile!,
+                          height: height(context) / 6,
+                          width: width(context) / 2.8,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.asset(
+                          AppAssets.profileImage,
+                          height: height(context) / 6,
+                          width: width(context) / 2.8,
+                          fit: BoxFit.cover,
+                        ),
                   Positioned(
                     bottom: 0,
                     right: 0,
@@ -133,9 +137,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           )
                         ],
                       ),
-                      child: Icon(
-                        Icons.camera_alt_outlined,
-                        color: AppColors.materialColor,
+                      child: GestureDetector(
+                        onTap: () {
+                          pickImage();
+                        },
+                        child: Icon(
+                          Icons.camera_alt_outlined,
+                          color: AppColors.materialColor,
+                        ),
                       ),
                     ),
                   ),
