@@ -134,17 +134,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Stack(
                 children: [
                   imageFile != null
-                      ? Image.file(
-                          imageFile!,
-                          height: height(context) / 6,
-                          width: width(context) / 2.8,
-                          fit: BoxFit.cover,
+                      ? Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 5,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(200),
+                            clipBehavior: Clip.antiAlias,
+                            child: Image.file(
+                              imageFile!,
+                              fit: BoxFit.fill,
+                              height: height(context) / 6,
+                              width: width(context) / 2.8,
+                            ),
+                          ),
                         )
-                      : Image.asset(
-                          AppAssets.profileImage,
-                          height: height(context) / 6,
-                          width: width(context) / 2.8,
-                          fit: BoxFit.cover,
+                      : Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 2,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          child: Image.asset(
+                            AppAssets.profileImage,
+                            height: height(context) / 6,
+                            width: width(context) / 2.8,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                   Positioned(
                     bottom: 0,

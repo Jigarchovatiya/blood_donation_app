@@ -178,7 +178,7 @@ class _DonationCampaignOneState extends State<DonationCampaignOne> {
                           AppStrings.weight,
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(width: width / 4.55),
+                        SizedBox(width: width / 4),
                         const Text(
                           AppStrings.lastDonatedOn,
                           style: TextStyle(fontSize: 18),
