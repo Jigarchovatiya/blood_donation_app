@@ -6,6 +6,7 @@ import '../../res/common/app_circle_avatar.dart';
 import '../../res/constants/app_colors.dart';
 import '../../res/constants/app_strings.dart';
 import '../../res/global/media_query.dart';
+import '../../utils/routes/routes_name.dart';
 
 class CreateAccountTwo extends StatefulWidget {
   const CreateAccountTwo({Key? key}) : super(key: key);
@@ -19,13 +20,16 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.white,
+        foregroundColor: AppColors.black,
         scrolledUnderElevation: 0,
         toolbarHeight: 80,
         leading: TextButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Icon(Icons.arrow_back_ios, size: 20),
+          child: const Icon(Icons.arrow_back_ios, size: 20, color: AppColors.black),
         ),
         title: const Text(
           AppStrings.appBarTitle,
@@ -33,11 +37,16 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
         ),
         centerTitle: true,
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              AppStrings.skip,
-              style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width(context) / 20, vertical: height(context) / 30),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
+              },
+              child: const Text(
+                AppStrings.skip,
+                style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline, fontSize: 16),
+              ),
             ),
           ),
         ],
@@ -51,6 +60,9 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    SizedBox(
+                      height: height(context) / 50,
+                    ),
                     const Row(
                       children: [
                         AppCircleAvatar(
@@ -64,7 +76,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                           child: Divider(
                             indent: 5,
                             endIndent: 5,
-                            color: AppColors.textColor,
+                            color: AppColors.dividerColor,
                             thickness: 2,
                           ),
                         ),
@@ -79,7 +91,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                           child: Divider(
                             indent: 5,
                             endIndent: 5,
-                            color: AppColors.textColor,
+                            color: AppColors.dividerColor,
                             thickness: 2,
                           ),
                         ),
@@ -125,7 +137,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
               ),
               const SizedBox(height: 50),
               Container(
-                height: height(context) / 2,
+                height: height(context) / 2.1,
                 width: width(context) / 1.2,
                 decoration: BoxDecoration(
                   color: AppColors.textFillColor,
@@ -145,7 +157,7 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                   ),
                 ),
               ),
-              SizedBox(height: height(context) / 10),
+              SizedBox(height: height(context) / 12),
               AppButton(
                 borderRadius: BorderRadius.circular(30),
                 backgroundColor: AppColors.materialColor,

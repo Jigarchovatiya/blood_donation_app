@@ -27,6 +27,7 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
     return Scaffold(
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
+        foregroundColor: AppColors.black,
         backgroundColor: AppColors.transparent,
         elevation: 0,
         toolbarHeight: 80,
@@ -34,7 +35,11 @@ class _OtpLogInScreenState extends State<OtpLogInScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Icon(Icons.arrow_back_ios, size: 20),
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: AppColors.black,
+          ),
         ),
         title: const Text(
           AppStrings.appBarTitle,

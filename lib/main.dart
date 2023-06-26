@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.materialColor,
         useMaterial3: false,
       ),
-      // home: const DonationCampaignOne(),
+      // home: const CreateAccountTwo(),
       routes: appRoutes,
       initialRoute: RoutesName.splashScreen,
     );

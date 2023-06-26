@@ -65,6 +65,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
       backgroundColor: AppColors.homeBg,
       appBar: AppBar(
         scrolledUnderElevation: 0,
+        foregroundColor: AppColors.black,
         backgroundColor: AppColors.transparent,
         elevation: 0,
         toolbarHeight: 80,
@@ -72,7 +73,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Icon(Icons.arrow_back_ios, size: 20),
+          child: const Icon(Icons.arrow_back_ios, size: 20, color: AppColors.black),
         ),
         title: const Text(
           AppStrings.appBarTitle,
@@ -80,13 +81,16 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
         ),
         centerTitle: true,
         actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RoutesName.bottomNavBar);
-            },
-            child: const Text(
-              AppStrings.skip,
-              style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width(context) / 20, vertical: height(context) / 30),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(context, RoutesName.bottomNavBar, (route) => false);
+              },
+              child: const Text(
+                AppStrings.skip,
+                style: TextStyle(color: AppColors.textColor, decoration: TextDecoration.underline, fontSize: 16),
+              ),
             ),
           ),
         ],
@@ -113,7 +117,7 @@ class _CreateAccountOneState extends State<CreateAccountOne> {
                           child: Divider(
                             indent: 5,
                             endIndent: 5,
-                            color: AppColors.textColor,
+                            color: AppColors.dividerColor,
                             thickness: 2,
                           ),
                         ),

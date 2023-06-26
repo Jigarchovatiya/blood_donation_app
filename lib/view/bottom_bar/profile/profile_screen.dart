@@ -67,6 +67,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
+  pickImageFromCamera() async {
+    image = await picker.pickImage(source: ImageSource.camera);
+
+    setState(() {
+      if (image != null) {
+        imageFile = File(image!.path);
+        storeImage();
+      } else {
+        debugPrint("No image selected------->");
+      }
+    });
+  }
+
+  pickImageFromGallery() async {
+    image = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (image != null) {
+        imageFile = File(image!.path);
+        storeImage();
+      } else {
+        debugPrint("No image selected");
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,23 +149,100 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Positioned(
                     bottom: 0,
                     right: 0,
-                    child: Container(
-                      padding: const EdgeInsets.all(7),
-                      decoration: const BoxDecoration(
-                        color: AppColors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x40000000),
-                            offset: Offset(0, 2),
-                            blurRadius: 4,
-                          )
-                        ],
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          pickImage();
-                        },
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          isDismissible: true,
+                          context: context,
+                          backgroundColor: AppColors.transparent,
+                          // barrierColor: Colors.transparent,
+                          builder: (context) => Container(
+                            height: 150,
+                            width: double.infinity,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                                color: AppColors.materialColor,
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15),
+                                )),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Select option",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(color: Colors.white),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: IconButton(
+                                          onPressed: () {
+                                            pickImageFromCamera();
+                                            Navigator.of(context).pop();
+                                          },
+                                          icon: const Icon(
+                                            Icons.camera_alt_rounded,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(color: Colors.white),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: IconButton(
+                                          onPressed: () {
+                                            pickImageFromGallery();
+                                            Navigator.of(context).pop();
+                                          },
+                                          icon: const Padding(
+                                            padding: EdgeInsets.all(4.0),
+                                            child: Icon(
+                                              Icons.image,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(7),
+                        decoration: const BoxDecoration(
+                          color: AppColors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0x40000000),
+                              offset: Offset(0, 2),
+                              blurRadius: 4,
+                            )
+                          ],
+                        ),
                         child: Icon(
                           Icons.camera_alt_outlined,
                           color: AppColors.materialColor,
