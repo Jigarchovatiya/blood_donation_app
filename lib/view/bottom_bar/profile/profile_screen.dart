@@ -297,8 +297,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 "aasma@gmail.com",
                 style: TextStyle(color: AppColors.textColor),
               ),
+              SizedBox(height: height(context) / 50),
               SizedBox(
-                height: height(context) / 18,
+                height: height(context) / 24,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

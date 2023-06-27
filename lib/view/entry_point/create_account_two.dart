@@ -164,7 +164,9 @@ class _CreateAccountTwoState extends State<CreateAccountTwo> {
                 foregroundColor: AppColors.white,
                 fixedSize: Size(width(context) / 1.14, height(context) / 15),
                 side: const BorderSide(style: BorderStyle.none),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.bottomNavBar);
+                },
                 buttonText: AppStrings.goToHomePage,
               ),
               SizedBox(height: height(context) / 20),
