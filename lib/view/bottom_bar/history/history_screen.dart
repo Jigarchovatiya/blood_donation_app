@@ -3,6 +3,7 @@ import 'package:blood_donation_app/res/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../data/model/history_model.dart';
 import '../../../res/constants/app_colors.dart';
 import '../../../res/constants/app_strings.dart';
 
@@ -42,13 +43,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 ),
               ),
               SizedBox(height: height / 70),
-              ListView.builder(
+              ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(height: height / 50),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 1,
                 itemBuilder: (context, index) {
                   return Container(
-                    // margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: AppColors.white,
                       boxShadow: const [
@@ -61,7 +62,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: height / 100, vertical: width / 80),
+                      padding: EdgeInsets.symmetric(vertical: height / 100, horizontal: width / 80),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +91,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              SizedBox(height: height / 100),
+                              SizedBox(height: height / 200),
                               Row(
                                 children: [
                                   SvgPicture.asset(AppAssets.calenderGray),
@@ -103,7 +104,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                 children: [
                                   SvgPicture.asset(AppAssets.mapGray),
                                   SizedBox(width: width / 50),
-                                  const Text("Pokhara-16, Lamachaur, "),
+                                  const Text("Pokhara-16, Lamachaur,"),
                                 ],
                               ),
                             ],
@@ -152,7 +153,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 separatorBuilder: (context, index) => SizedBox(height: height / 50),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: 4,
+                itemCount: historyList.length,
                 itemBuilder: (context, index) {
                   return Container(
                     decoration: BoxDecoration(

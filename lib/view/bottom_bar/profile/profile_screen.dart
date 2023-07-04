@@ -179,11 +179,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           backgroundColor: AppColors.transparent,
                           // barrierColor: Colors.transparent,
                           builder: (context) => Container(
-                            height: 150,
+                            height: height(context) / 5,
                             width: double.infinity,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
-                                color: AppColors.materialColor,
+                                color: AppColors.materialColor.withOpacity(0.9),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(15),
                                   topRight: Radius.circular(15),
@@ -299,7 +299,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: height(context) / 50),
               SizedBox(
-                height: height(context) / 24,
+                height: height(context) / 21,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
